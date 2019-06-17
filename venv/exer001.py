@@ -76,4 +76,4 @@ print('Com o aumento de 15%, o salário deste funcionário passa a ser R${:1.2f}
 '''
 
 
-#teste de alteração via console para o git
+#teste de alteração via console para o git add
