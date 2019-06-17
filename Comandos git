@@ -1,0 +1,32 @@
+Comandos git
+
+git init - iniciar o repositório
+
+rm -rf .git deletar o repositorio
+
+ls -la  comando do console para ver todas as pastas até as ocultas
+
+git status verifica os arquivos adicionados para MODIFIED E STAGED
+
+git add <file> adiciona para o commit
+
+git commit -m "comentário"  commita alterações
+git commit -am "comentário"  commita todos os arquivos modificados
+
+git log --decorate log de commits
+
+git show <committag> mostra as alterações feitas naquele commit
+
+git diff mostra direfenças que irão no proximo commit
+
+git checkout <file> retira modificações feitas nos arquivos(Antes do Git Add)
+
+git reset HEAD  retira os arquivos STAGEDs e retorna para Modified
+
+git reset --soft  desfaz o commit e retorna os arquivos par STAGED
+
+git reset --mixed desfaz o commit e retorna os arquivos para MODFIED
+
+git reset --hard desfaz o commit e some com os arquivos commitados naquele commit
+
+
