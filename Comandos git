@@ -29,6 +29,38 @@ git reset --mixed desfaz o commit e retorna os arquivos para MODFIED
 
 git reset --hard desfaz o commit e some com os arquivos commitados naquele commit
 
+git revert <committag> Retorna os arquivos do commit selecionado sem perder os commits posteriores
+
+git checkout -b nomedobranch  cria um novo branch
+
+git branch te mostra em qual branch vocês esta
+
+git checkout nomedobranch move para o branch digitado
+
+git branch -D nomedobranch  deleta o branch 
+
+
+git .gitignore arquivo txt onde especificamos arquivos e extensões de arquivos que não queremos que sejam commitados
+
+
+git stash  separa modificações para não serem adicionadas no STAGED
+
+git stash apply  retorna os arquivos serados com o comando "git stash"
+
+git stash list  lista os arquivos separados com o "git stash" 
+
+git stash clear  descarta todos os arquivos separados com o comando "git stash"
+
+
+git config --global alias.<letra ou palavra que você deseja usar de atalho> <comando que este atalho corresponderá>
+
+
+
+
+git merge nomedobranch  Unifica as alterações do branch master com o branch selecionado (Aconselhavel a usar quando houveram alterações tanto no brancha selecionado como no branch master ao mesmo tempo)
+
+
+git rebase nomedobranch  Exclui aquele branch e unifica ao branch master (Aconselhavel a usar sempre que não há alterações no  branch master)
 
 
 GITHUB
@@ -36,3 +68,9 @@ GITHUB
 git push origin master	envia os commits feitos na maquina local para o github
 
 git clone  clona todo o repositório selecionado para uma determinada pasta
+
+git tag -a 1.0.0 -m"RElease versão" Crea releases no github
+
+git tag -d 1.0.0  deleta a release
+
+git push origin :1.0.0  deletar a release no github
