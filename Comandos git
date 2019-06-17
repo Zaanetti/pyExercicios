@@ -30,3 +30,9 @@ git reset --mixed desfaz o commit e retorna os arquivos para MODFIED
 git reset --hard desfaz o commit e some com os arquivos commitados naquele commit
 
 
+
+GITHUB
+
+git push origin master	envia os commits feitos na maquina local para o github
+
+git clone  clona todo o repositório selecionado para uma determinada pasta
