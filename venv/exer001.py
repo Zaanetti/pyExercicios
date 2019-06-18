@@ -1,4 +1,4 @@
-Nome
+#Nome
 '''
 nome = input('Qual é o seu nome? ')
 sobre = input('E seu sobrenome?')
@@ -36,9 +36,6 @@ print('É captalizado? {}'.format(sAlgo.istitle()))
 '''
 
 
-
-
-
 #exer005
 '''
 n = int(input('Digite um numero: '))
@@ -51,12 +48,42 @@ n = int(input('Digite um numero: '))
 print('Seu dobro é {}, seu triplo é {} e sua raiz é {}'.format(n*2, n*3, n**(1/2)))
 '''
 
+#exer007
+'''
+m1 = float(input('Digite a nota do M1: '))
+m2 = float(input('Digite a nota do M2: '))
+print('A média final deste aluno é de: {}'.format((m1+m2)/2))
+'''
+
+#exer008
+'''
+m = float(input('Digite o comprimento em metros: '))
+print('Este comprimento equivale a {} cm e a {} milimetros.'.format((100*m), (1000*m)))
+'''
+
+#exer009
+'''
+n = int(input('Digite um numero para saber sua tabuada: '))
+print('{} x 1 = {}'.format(n, (n*1)))
+print('{} x 2 = {}'.format(n, (n*2)))
+print('{} x 3 = {}'.format(n, (n*3)))
+print('{} x 4 = {}'.format(n, (n*4)))
+print('{} x 5 = {}'.format(n, (n*5)))
+'''
+
+#exer010
+'''
+r = float(input('Quantos reais o você possue na carteira? '))
+d = float(input('Qual a cotação atual do dollar? '))
+print('Com R${} é possivel comprr US${:.2f} :)'.format(r, (r/d)))
+'''
+
 #exer011
 '''
 a = float(input('Insira a altura da parede: '))
 l = float(input('Insira o largura da parede: '))
 t = (a*l)/2
-print(' A parede possui {}m², portanto é necessário {} litros de tinta '.format(a*l, t))
+print(' A parede possui {:.2f}m², portanto é necessário {:.2f} litros de tinta '.format(a*l, t))
 '''
 
 
@@ -75,6 +102,3 @@ s = float(input('Informe o salário do funcionário: '))
 print('Com o aumento de 15%, o salário deste funcionário passa a ser R${:1.2f}'.format(s*1.15))
 '''
 
-
-#teste de alteração via console para o git add teste de alteração 2
-#Teste pro github
