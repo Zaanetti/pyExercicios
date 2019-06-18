@@ -1,0 +1,15 @@
+Python
+
+Importar bibliotecas
+
+import biblioteca  importa todas as funções da bibliotecas
+
+from biblioteca import func1, func2  importa somente as funções selecionadas de uma dada biblioteca
+
+
+
+
+
+bibliotecas
+
+math - operações matematicas mais complexas e especificas 

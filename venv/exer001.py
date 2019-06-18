@@ -100,5 +100,52 @@ print('Na liquidação de {}% de desconto, este produto, de R${} sai por R${:1.2
 '''
 s = float(input('Informe o salário do funcionário: '))
 print('Com o aumento de 15%, o salário deste funcionário passa a ser R${:1.2f}'.format(s*1.15))
+
 '''
 
+#exer014
+'''
+c = float(input('Informe a temperatura em ºC: '))
+f = (c * (9/5)) + 32
+print('{:.2f} ºC na escala de Fahrenheit equivale a {:.2f} ºF.'.format(c, f))
+'''
+
+#exer015
+'''
+d = int(input('Por quantos dias este carro foi alugado? '))
+km = float(input('Quantos Kms foram rodados?' ))
+print('O valor total do aluguel deste carro foi de {:.2f}'.format((d*60)+(km*0.15)))
+'''
+
+#exer016
+'''
+import math
+
+n = float(input('Informe um numero: '))
+i = math.floor(n)
+print('A parte inteira de {} é de {}'.format(n, i))
+'''
+
+#exer017
+'''
+import math
+
+co = float(input('Informe o cateto oposto: '))
+ca = float(input('informe o cateto adjacente: '))
+h = math.hypot(co,ca)
+print('a Hipotenusa de {} e {} é igual a {:.2f}'.format(co, ca, h))
+
+'''
+
+#exer018
+'''
+import math
+
+ang = float(input('Informe um algulo qualquer: '))
+sen = math.sin(ang)
+cos = math.cos(ang)
+tan = math.tan(ang)
+print('Seno = {} \nCoseno = {} \nTangente = {}'.format(sen, cos, tan))
+'''
+
+#exer019

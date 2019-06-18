@@ -67,6 +67,8 @@ GITHUB
 
 git push origin master	envia os commits feitos na maquina local para o github
 
+git pull  puxa as modificações feitas e que esta commitadas no github
+
 git clone  clona todo o repositório selecionado para uma determinada pasta
 
 git tag -a 1.0.0 -m"RElease versão" Crea releases no github
