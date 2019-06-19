@@ -149,3 +149,5 @@ print('Seno = {} \nCoseno = {} \nTangente = {}'.format(sen, cos, tan))
 '''
 
 #exer019
+
+import math
