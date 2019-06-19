@@ -1,13 +1,11 @@
-#Nome
+# Nome
 '''
 nome = input('Qual é o seu nome? ')
 sobre = input('E seu sobrenome?')
 print('Olá {} {}, muito prazer!'.format(nome, sobre))
 '''
 
-
-
-#soma
+# soma
 '''
 n1 = int(input('Informe o 1 numero: '))
 n2 = int(input('Informe o 2 numero: '))
@@ -20,8 +18,7 @@ ds = n1 % n2
 print(' Soma = {}|\n Sub {}|\n Vez {}|\n Div {:.3}|'.format(s, m, v, d))
 '''
 
-
-#Propriedades
+# Propriedades
 '''
 sAlgo = input('Digite algo: ')
 print('Propriedades sobre: {}'.format(sAlgo))
@@ -35,33 +32,32 @@ print('É minusculo? {}'.format(sAlgo.islower()))
 print('É captalizado? {}'.format(sAlgo.istitle()))
 '''
 
-
-#exer005
+# exercicio 005
 '''
 n = int(input('Digite um numero: '))
 print('O seu susessor é {} e seu antessessor é {}!'.format(n+1, n-1))
 '''
 
-#exer006
+# exercicio 006
 '''
 n = int(input('Digite um numero: '))
 print('Seu dobro é {}, seu triplo é {} e sua raiz é {}'.format(n*2, n*3, n**(1/2)))
 '''
 
-#exer007
+# exercicio 007
 '''
 m1 = float(input('Digite a nota do M1: '))
 m2 = float(input('Digite a nota do M2: '))
 print('A média final deste aluno é de: {}'.format((m1+m2)/2))
 '''
 
-#exer008
+# exercicio 008
 '''
 m = float(input('Digite o comprimento em metros: '))
 print('Este comprimento equivale a {} cm e a {} milimetros.'.format((100*m), (1000*m)))
 '''
 
-#exer009
+# exercicio 009
 '''
 n = int(input('Digite um numero para saber sua tabuada: '))
 print('{} x 1 = {}'.format(n, (n*1)))
@@ -71,14 +67,14 @@ print('{} x 4 = {}'.format(n, (n*4)))
 print('{} x 5 = {}'.format(n, (n*5)))
 '''
 
-#exer010
+# exercicio 010
 '''
 r = float(input('Quantos reais o você possue na carteira? '))
 d = float(input('Qual a cotação atual do dollar? '))
 print('Com R${} é possivel comprr US${:.2f} :)'.format(r, (r/d)))
 '''
 
-#exer011
+# exercicio 011
 '''
 a = float(input('Insira a altura da parede: '))
 l = float(input('Insira o largura da parede: '))
@@ -86,8 +82,7 @@ t = (a*l)/2
 print(' A parede possui {:.2f}m², portanto é necessário {:.2f} litros de tinta '.format(a*l, t))
 '''
 
-
-#exer012
+# exercicio 012
 '''
 p = float(input('Informe o valor do produto: '))
 d = float(input('Informe o desconto em %: '))
@@ -96,28 +91,28 @@ vd = p - np
 print('Na liquidação de {}% de desconto, este produto, de R${} sai por R${:1.2f}, o valor do desconto é de R${:1.2f}'.format(d, p, np, vd))
 '''
 
-#exer013
+# exercicio 013
 '''
 s = float(input('Informe o salário do funcionário: '))
 print('Com o aumento de 15%, o salário deste funcionário passa a ser R${:1.2f}'.format(s*1.15))
 
 '''
 
-#exer014
+# exercicio 014
 '''
 c = float(input('Informe a temperatura em ºC: '))
 f = (c * (9/5)) + 32
 print('{:.2f} ºC na escala de Fahrenheit equivale a {:.2f} ºF.'.format(c, f))
 '''
 
-#exer015
+# exercicio 015
 '''
 d = int(input('Por quantos dias este carro foi alugado? '))
 km = float(input('Quantos Kms foram rodados?' ))
 print('O valor total do aluguel deste carro foi de {:.2f}'.format((d*60)+(km*0.15)))
 '''
 
-#exer016
+# exercicio 016
 '''
 import math
 
@@ -126,7 +121,7 @@ i = math.trunc(n)
 print('A parte inteira de {} é de {}'.format(n, i))
 '''
 
-#exer017
+# exercicio 017
 '''
 import math
 
@@ -137,9 +132,10 @@ print('a Hipotenusa de {} e {} é igual a {:.2f}'.format(co, ca, h))
 
 '''
 
-#exer018
+# exercicio 018
 
 import math
+
 '''
 ang = float(input('Informe um algulo qualquer: '))
 sen = math.sin(math.radians(ang))
@@ -148,13 +144,65 @@ tan = math.tan(math.radians(ang))
 print('Seno = {} \nCoseno = {} \nTangente = {}'.format(sen, cos, tan))
 '''
 
-#exer019
+# exercicio 019
 '''
 import random
 
-a1 = input('Primeiro aluno: ')
-a2 = input('Segundo aluno: ')
-a3 = input('Terceiro aluno: ')
-sor = random.randr
-print('O aluno sorteado foi o {}'.format(sor))
+a1 = str(input('Primeiro aluno: '))
+a2 = str(input('Segundo aluno: '))
+a3 = str(input('Terceiro aluno: '))
+a4 = str(input('Quarto aluno: '))
+sor = [a1, a2, a3, a4]
+print('O aluno sorteado foi o {}'.format(random.choice(sor)))
 '''
+
+# exercicio 020
+'''
+import random
+
+a1 = str(input('Primeiro aluno: '))
+a2 = str(input('Segundo aluno: '))
+a3 = str(input('Terceiro aluno: '))
+a4 = str(input('Quarto aluno: '))
+sor = [a1, a2, a3, a4]
+#print(sor)
+a = random.choice(sor)
+sor.remove(a)
+b = random.choice(sor)
+sor.remove(b)
+c = random.choice(sor)
+sor.remove(c)
+d = sor[0]
+print('f1 = {} \nf2 = {} \nf3 = {} \nf4 = {}'.format(a, b, c, d))
+'''
+
+# exercicio 020_2
+'''
+from random import shuffle
+
+a1 = str(input('Primeiro aluno: '))
+a2 = str(input('Segundo aluno: '))
+a3 = str(input('Terceiro aluno: '))
+a4 = str(input('Quarto aluno: '))
+sor = [a1, a2, a3, a4]
+sor.sort()
+print(sor)
+shuffle(sor)
+print(sor)
+'''
+
+# exercicio 021
+
+import playsound
+
+cond = str(input('Deseja tocar a musica?(s/N) '))
+
+# Fedora baixar libs: playsound, pycairo, pyGoObject
+'''
+if cond == 's':
+    audio = r'/home/luiz/Música/guitar.mp3'
+    playsound.playsound(audio)
+'''
+
+# win10
+???

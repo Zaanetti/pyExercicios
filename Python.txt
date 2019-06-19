@@ -8,8 +8,12 @@ from biblioteca import func1, func2  importa somente as funções selecionadas d
 
 
 
-
-
 bibliotecas
 
 math - operações matematicas mais complexas e especificas 
+
+
+
+Site interessante:
+
+https://pygobject.readthedocs.io/en/latest/getting_started.html#fedora-getting-started
