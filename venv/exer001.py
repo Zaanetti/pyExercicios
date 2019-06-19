@@ -122,7 +122,7 @@ print('O valor total do aluguel deste carro foi de {:.2f}'.format((d*60)+(km*0.1
 import math
 
 n = float(input('Informe um numero: '))
-i = math.floor(n)
+i = math.trunc(n)
 print('A parte inteira de {} é de {}'.format(n, i))
 '''
 
@@ -138,16 +138,23 @@ print('a Hipotenusa de {} e {} é igual a {:.2f}'.format(co, ca, h))
 '''
 
 #exer018
-'''
-import math
 
+import math
+'''
 ang = float(input('Informe um algulo qualquer: '))
-sen = math.sin(ang)
-cos = math.cos(ang)
-tan = math.tan(ang)
+sen = math.sin(math.radians(ang))
+cos = math.cos(math.radians(ang))
+tan = math.tan(math.radians(ang))
 print('Seno = {} \nCoseno = {} \nTangente = {}'.format(sen, cos, tan))
 '''
 
 #exer019
+'''
+import random
 
-import math
+a1 = input('Primeiro aluno: ')
+a2 = input('Segundo aluno: ')
+a3 = input('Terceiro aluno: ')
+sor = random.randr
+print('O aluno sorteado foi o {}'.format(sor))
+'''
