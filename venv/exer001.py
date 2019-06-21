@@ -238,10 +238,15 @@ ns = str(ni)
 cid = str(input('Cidade: '))
 cid = cid.strip()
 
-if cid.index('Santos') == 0 :
+if cid.find('Santo') == 0 :
     print('O nome da cidade começa com Santo')
 else:
     print('O nome da cidade Não começa com Santo')
+
+
+# exercicio 25
+
+
 
 
 
