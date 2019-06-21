@@ -246,7 +246,9 @@ else:
 
 # exercicio 25
 
-
+cid = str(input('Nome: '))
+cid = cid.strip()
+if cid.find('Silva') =! -1
 
 
 
