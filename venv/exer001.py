@@ -192,17 +192,56 @@ print(sor)
 '''
 
 # exercicio 021
-
+'''
 import playsound
-
 cond = str(input('Deseja tocar a musica?(s/N) '))
 
+
 # Fedora baixar libs: playsound, pycairo, pyGoObject
-'''
+
 if cond == 's':
     audio = r'/home/luiz/Música/guitar.mp3'
     playsound.playsound(audio)
 '''
 
 # win10
-???
+# ???
+
+
+# exercicio 022
+'''
+n = str(input('Insira o nome completo: '))
+n = n.strip()
+letras = len(n) - n.count(' ')
+
+print("""Maisculo: {}
+
+Minusculo: {}
+
+Nº de letras: {}
+
+Letras 1º nome: {}""".format(n.upper(), n.lower(), letras, n.find(' ')))
+'''
+
+# exercicio 023
+'''
+ni = int(input('Digite um numero: '))
+ns = str(ni)
+    print(""" Un = {}
+    De = {}    
+    Ce = {}
+    MI = {}""".format(ns[0], ns[1], ns[2], ns[3]))
+
+'''
+# exercicio 24
+
+cid = str(input('Cidade: '))
+cid = cid.strip()
+
+if cid.index('Santos') == 0 :
+    print('O nome da cidade começa com Santo')
+else:
+    print('O nome da cidade Não começa com Santo')
+
+
+

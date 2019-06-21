@@ -17,3 +17,6 @@ math - operações matematicas mais complexas e especificas
 Site interessante:
 
 https://pygobject.readthedocs.io/en/latest/getting_started.html#fedora-getting-started
+
+
+https://pythonacademy.com.br/blog/desenvolva-aplicativos-para-android-ios-com-python-e-kivy
