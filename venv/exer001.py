@@ -133,10 +133,8 @@ print('a Hipotenusa de {} e {} é igual a {:.2f}'.format(co, ca, h))
 '''
 
 # exercicio 018
-
-import math
-
 '''
+import math
 ang = float(input('Informe um algulo qualquer: '))
 sen = math.sin(math.radians(ang))
 cos = math.cos(math.radians(ang))
@@ -192,20 +190,21 @@ print(sor)
 '''
 
 # exercicio 021
-'''
-import playsound
-cond = str(input('Deseja tocar a musica?(s/N) '))
+
+#import playsound
+# cond = str(input('Deseja tocar a musica?(s/N) '))
 
 
 # Fedora baixar libs: playsound, pycairo, pyGoObject
-
-if cond == 's':
+'''
+ if cond == 's':
     audio = r'/home/luiz/Música/guitar.mp3'
     playsound.playsound(audio)
-'''
 
 # win10
-# ???
+  '''
+#audio = r'C:\Users\Zanetti\Downloads\metal-guitar-11.mp3'
+#playsound.playsound(audio)
 
 
 # exercicio 022
@@ -234,7 +233,7 @@ ns = str(ni)
 
 '''
 # exercicio 24
-
+'''
 cid = str(input('Cidade: '))
 cid = cid.strip()
 
@@ -242,13 +241,16 @@ if cid.find('Santo') == 0 :
     print('O nome da cidade começa com Santo')
 else:
     print('O nome da cidade Não começa com Santo')
-
+'''
 
 # exercicio 25
-
+'''
 cid = str(input('Nome: '))
 cid = cid.strip()
-if cid.find('Silva') =! -1
-
+if cid.find('Silva') != -1:
+    print('Este nome possue Silva.')
+else:
+    print('Não possue Silva')
+'''
 
 
