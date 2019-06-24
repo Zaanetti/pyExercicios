@@ -245,12 +245,37 @@ else:
 
 # exercicio 25
 '''
-cid = str(input('Nome: '))
-cid = cid.strip()
-if cid.find('Silva') != -1:
+nome = str(input('Nome: '))
+nome = cid.strip()
+if nome.find('Silva') != -1:
     print('Este nome possue Silva.')
 else:
     print('Não possue Silva')
 '''
 
+# exercicio 26
+'''
+nome = str(input('Nome: '))
+nome = nome.strip()
+na = nome.count('a') + nome.count('A')
+if nome.find('A') < nome.find('a'):
+    pa = nome.find('A')
+else:
+    pa = nome.find('a')
+ua = nome.rfind('a')
+
+print(na)
+print(pa)
+print(ua)
+'''
+
+# exercicio 27
+'''
+nome = str(input('Nome: '))
+nome = nome.strip()
+lnome = nome.split()
+print(lnome[0])
+lnome.reverse()
+print(lnome[0])
+'''
 
