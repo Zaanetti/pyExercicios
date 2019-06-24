@@ -225,19 +225,19 @@ Letras 1º nome: {}""".format(n.upper(), n.lower(), letras, n.find(' ')))
 # exercicio 023
 '''
 ni = int(input('Digite um numero: '))
-ns = str(ni)
-    print(""" Un = {}
-    De = {}    
-    Ce = {}
-    MI = {}""".format(ns[0], ns[1], ns[2], ns[3]))
+u = ni // 1 % 10
+d = ni // 10 % 10
+c = ni // 100 % 10
+m = ni // 1000 % 10
 
+print("Un: {} \nDe: {} \nCe: {} \nMi: {}".format(u, d, c, m))
 '''
+
 # exercicio 24
 '''
-cid = str(input('Cidade: '))
-cid = cid.strip()
+cid = str(input('Cidade: ')).strip()
 
-if cid.find('Santo') == 0 :
+if cid[:5].upper() == 'SANTO':
     print('O nome da cidade começa com Santo')
 else:
     print('O nome da cidade Não começa com Santo')
@@ -245,9 +245,8 @@ else:
 
 # exercicio 25
 '''
-nome = str(input('Nome: '))
-nome = cid.strip()
-if nome.find('Silva') != -1:
+nome = str(input('Nome: ')).strip()
+if 'SILVA' in nome.upper():
     print('Este nome possue Silva.')
 else:
     print('Não possue Silva')
@@ -255,18 +254,13 @@ else:
 
 # exercicio 26
 '''
-nome = str(input('Nome: '))
-nome = nome.strip()
-na = nome.count('a') + nome.count('A')
-if nome.find('A') < nome.find('a'):
-    pa = nome.find('A')
-else:
-    pa = nome.find('a')
+nome = str(input('Nome: ')).strip()
+na = nome.upper().count('A')
+pa = nome.upper().find('A')
 ua = nome.rfind('a')
-
-print(na)
-print(pa)
-print(ua)
+print('Numeros de A: {}'.format(na))
+print('Posição do 1º A: {}'.format(pa))
+print('Posição do ultimo A: {}'.format(ua))
 '''
 
 # exercicio 27
@@ -275,7 +269,6 @@ nome = str(input('Nome: '))
 nome = nome.strip()
 lnome = nome.split()
 print(lnome[0])
-lnome.reverse()
-print(lnome[0])
-'''
+print(lnome[len(lnome)-1])
 
+'''
