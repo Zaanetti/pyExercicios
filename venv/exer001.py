@@ -275,24 +275,26 @@ print(lnome[len(lnome)-1])
 
 # exercicio 28
 '''
-import random
+from random import randint
+from time import sleep
 num = int(input('Pense em um numero entre 0 e 5: '))
-if num == random.randint(0, 5):
+if num == randint(0, 5):
+    sleep(2)
     print('Ganhou')
 else:
+    sleep(2)
     print('Perdeu')
 '''
 
 # exercicio 29
 '''
-import random
+from random import randint
 
-vel = random.randint(50, 120)
+vel = randint(50, 120)
 print('Radar: Velocidade lida - {} Km/h'.format(vel))
 if vel > 80:
     mul = (vel - 80) * 7.00
     print('Velocidade acima do limite de 80 Km/h')
-    print('Processando multa...')
     print('Valor da multa a ser paga: R${:.2f}'.format(mul))
 '''
 
@@ -362,7 +364,7 @@ print('O valor do aumento deve ser de R${:.2f}, totalizando um salário de R${:.
 '''
 
 # exercicio 35
-
+'''
 a = float(input('Informe o comprimento da reta a: '))
 b = float(input('Informe o compromento da reta b: '))
 c = float(input('Informe o comprimento da reta c: '))
@@ -370,3 +372,4 @@ if (b - c) < a < (b + c) and (a - c) < b < (a + c) and (a - b) < c < (a + b):
     print('Estas retas podem formar um triangulo')
 else:
     print('Estas retas NAO podem formar um triangulo')
+'''
