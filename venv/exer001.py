@@ -272,3 +272,36 @@ print(lnome[0])
 print(lnome[len(lnome)-1])
 
 '''
+
+# exercicio 28
+'''
+import random
+num = int(input('Pense em um numero entre 0 e 5: '))
+if num == random.randint(0, 5):
+    print('Ganhou')
+else:
+    print('Perdeu')
+'''
+
+# exercicio 29
+'''
+import random
+
+vel = random.randint(50, 120)
+print('Radar: Velocidade lida - {} Km/h'.format(vel))
+if vel > 80:
+    mul = (vel - 80) * 7.00
+    print('Velocidade acima do limite de 80 Km/h')
+    print('Processando multa...')
+    print('Valor da multa a ser paga: R${:.2f}'.format(mul))
+'''
+
+# exercicio 30
+'''
+n = int(input('Digite um numero inteiro: '))
+if (n % 2) == 0:
+    print('{} é par.'.format(n))
+else:
+    print('{} é impar.'.format(n))
+'''
+
