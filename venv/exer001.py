@@ -305,3 +305,68 @@ else:
     print('{} é impar.'.format(n))
 '''
 
+# exercicio 31
+'''
+v = float(input("Quantos Km's de viagem? "))
+p = 0.5
+if v > 200:
+    p = 0.45
+print('Valor da passagem: R$ {:.2f}'.format(v*p))
+'''
+
+# exercicio 32
+'''
+a = int(input('Digite o ano: '))
+print('Este é bisexto.') if (a % 4) == 0 else print('Não é bisexto')
+'''
+
+# exercicio 33
+'''
+p = int(input('1º nº: '))
+s = int(input('2º nº: '))
+t = int(input('3º nº: '))
+i = True
+if p == s == t:
+    print('Os 3 numeros são iguais.')
+    i = False
+elif p > s > t or p == s > t:
+    ma = p
+    me = t
+elif s > t > p or s == t > p:
+    ma = s
+    me = p
+elif t > p > s or t == p > s:
+    ma = t
+    me = s
+elif s > p > t or s == p > t:
+    ma = s
+    me = t
+elif p > t > s or p == t > s:
+    ma = p
+    me = s
+elif t > s > p or t == s > p:
+    ma = t
+    me = p
+if i:
+    print('O maior numero é {} e o menor é {}'.format(ma, me))
+'''
+
+# exercicio 34
+'''
+sal = float(input('Qual o salário do funcionário? '))
+print('Calculando aumento...')
+a = 0.15
+if sal > 1250:
+    a = 0.1
+print('O valor do aumento deve ser de R${:.2f}, totalizando um salário de R${:.2f}'.format(sal * a, sal * (1 + a)))
+'''
+
+# exercicio 35
+
+a = float(input('Informe o comprimento da reta a: '))
+b = float(input('Informe o compromento da reta b: '))
+c = float(input('Informe o comprimento da reta c: '))
+if (b - c) < a < (b + c) and (a - c) < b < (a + c) and (a - b) < c < (a + b):
+    print('Estas retas podem formar um triangulo')
+else:
+    print('Estas retas NAO podem formar um triangulo')
