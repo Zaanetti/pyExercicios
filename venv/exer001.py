@@ -371,5 +371,17 @@ c = float(input('Informe o comprimento da reta c: '))
 if (b - c) < a < (b + c) and (a - c) < b < (a + c) and (a - b) < c < (a + b):
     print('Estas retas podem formar um triangulo')
 else:
-    print('Estas retas NAO podem formar um triangulo')
+    print('Estas retas NAO podem formar um triangulo')    
 '''
+
+# exercicio 36
+
+imo = float(input('Qual o valor do imovel? '))
+sal = float(input('Qual o seu salário? '))
+par = int(input('em quantas parcelas'))
+
+imop = imo / par
+
+if imop > (sal * 0.3):
+    print()
+

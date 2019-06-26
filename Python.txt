@@ -1,10 +1,84 @@
 Python
 
+#desafio 80
+
 Importar bibliotecas
 
 import biblioteca  importa todas as funções da bibliotecas
 
 from biblioteca import func1, func2  importa somente as funções selecionadas de uma dada biblioteca
+
+print(f'Na posição {p} encontrei o valor {v:.2f}', end='') # usado o f na frente para formatar como uma fstring e o end='' no final para poder emendar um texto no outro
+print('-' * 20) # imprime 20 vezes - na tela
+
+a += b # abreviação para a = a + b
+
+
+if lógica:
+	comando
+else:
+	comando
+
+if lógica:
+	comando	
+elif lógica:
+	comando
+
+
+for c in range(0, 10)
+	comando
+
+for c in lista:
+	comando
+
+for pos, c in enumerate(c)
+	comando
+
+while (lógica):
+	comando
+
+while lógica:
+	comando
+	break
+
+
+#tuplas
+tupla = (a, b, c, d)  #tuplas são imutaveis e são indicadas por () parenteses
+print(sorted(tupla)) #traz em odem alfabética ou do menor para o maior
+del(tupla) #deleta tupla
+
+
+#listas
+lista = [a, b, c, d] # listas são mutaveis e indicadas por []
+lista.append(f) # adiciona o elemento a lista
+lista.insert(0, aa) # insere o valor no index indicado 
+lista.sort() # traz em odem alfabética ou do menor para o maior
+lista.sort(reverse=True) # traz do maior para o menor
+len(lista) # numero de elementos na lista
+
+	#como inputar valores manualmente em uma lista
+valores = list()
+for cont in range(0, 5)
+	valores.append(int(input('Digite um valor: ')))
+
+
+listaC = listaB # cria uma ligação entre as duas listas, as duas terão os mesmos valores e o que for alterada em uma será alterada em outra
+listaC = listaB[:] # apenas copia os valores da listaB para a listaC, mas neste caso as duas são idependentes uma da outra sem a ligação feita na linha de cima
+
+	# maneiras de retirar um elemento da lista
+lanche.pop() #remove o ultimo item da lisra
+lanche.pop(3) # remove o elemento c da lista
+del lanche # deleta lista
+del lanche[3] # remove o elemento c desta lista
+lanche.remove('c') # remove o elemento c da lista
+if 'c' in lanche
+	lanche.remove('c')
+
+
+#dicionários
+dicionario = {a, b, c, d}
+
+
 
 
 
