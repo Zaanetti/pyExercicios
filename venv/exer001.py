@@ -375,13 +375,15 @@ else:
 '''
 
 # exercicio 36
-
+'''
 imo = float(input('Qual o valor do imovel? '))
 sal = float(input('Qual o seu salário? '))
-par = int(input('em quantas parcelas'))
+par = int(input('Nº quantas parcelas: '))
 
 imop = imo / par
 
 if imop > (sal * 0.3):
-    print()
-
+    print(f'Financiamento inviável: Parcelas de {imop:.2f} maiores que 30% do salário que é de {(sal * 0.3):.2f}')
+else:
+    print('Parabéns pelo imóvel!')
+'''

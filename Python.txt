@@ -1,6 +1,6 @@
 Python
 
-#desafio 80
+#desafio 73, 76, 80 e 83
 
 Importar bibliotecas
 
@@ -76,7 +76,27 @@ if 'c' in lanche
 
 
 #dicionários
-dicionario = {a, b, c, d}
+dicionario = {'nome': 'a', 'sexo': 'b', 'rua': 'c', 'numero': 25}
+dicionario[cidade] = 'd' #adiciona um item ao dicionário
+del dicionario[sexo] # deleta o item do dicionário
+
+dicionario = {'nome': 'a',
+			  'sexo': 'b',
+			  'rua': 'c',
+			  'numero': 25	
+			 }
+dicionario.values() # pega os valores de declarados nas keys (a, b, c, 25)
+dicionario.keys() # pega os nomes das keys (nome, sexo, rua, numero)
+dicionario.items() # traz as keys e seus respectivos valores em seguida ('nome': 'a', 'sexo': 'b', 'rua': 'c', 'numero': 25)
+
+for k,v in filme.items():
+	print(f'O {k} é {v}')
+
+lista.append(dicionario) #adiciona ao dicionário dentro de uma lista
+lista.append(dicionario.copy()) # copia o dicionário para dentro da lista de maneira que não cria ligação com as proximas alterações do mesmo dicionário
+
+
+
 
 
 
