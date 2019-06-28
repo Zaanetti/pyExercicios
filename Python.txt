@@ -114,3 +114,10 @@ https://pygobject.readthedocs.io/en/latest/getting_started.html#fedora-getting-s
 
 
 https://pythonacademy.com.br/blog/desenvolva-aplicativos-para-android-ios-com-python-e-kivy
+
+
+
+
+Web
+
+request > urls > view > model > response
