@@ -1,22 +1,30 @@
 from time import sleep
+import sys
 
 Ttask = int(input('Informe o Ttask desejado: '))
 Umax = int(input('Informe o Umax desejado: '))
+
+print(f'Maximo de usuários (Umax) = {Umax}', file=open('output.txt', 'w'))
+print(f'Numero de tasks por usuário (Ttask) = {Ttask}', file=open('output.txt', 'a'))
+print('-=' * 40, file=open('output.txt', 'a'))
+print(f"\n{'clock':^7}|{'input':^7}|{'Output':^8}|{'Tip':^7}", file=open('output.txt', 'a'))
 
 Tu = int()  # Total users
 Uws = int()  # Users without server
 ul = int()  # Users left
 sc = int()  # Servers created
 st = int()  # Servers Terminated
+ups = str()  # Users per server
+tip = str()  # Texto de informação sobre alterações feitas no tick corrente
 dgServ = {'nserv': 0}  # Dicionário geral de todos os Servers usados no processo - 'nserv'= numero de servidores criados
 
-# path = '/home/luiz/Documentos/meus/pyExercicios/input2.txt'  # lendo o arquivo linux
-path = 'C:/Users/Zanetti/Documents/Python/pyExercicios/input1.txt'  # lendo o arquivo windows
+# path = 'C:/Users/Zanetti/Documents/Python/pyExercicios/input1.txt'  # lendo o arquivo windows
+path = '/home/luiz/Documentos/meus/pyExercicios/input2.txt'  # lendo o arquivo linux
 linput = open(path).read().split()  # transformando em uma lista
 
 for i in range(0, len(linput) + Ttask - 1):
     if i < len(linput):
-        Uws = int(linput[i])   # Informa o numero de usuários sem servidor que foram inputados neste tic
+        Uws = int(linput[i])  # Informa o numero de usuários sem servidor que foram inputados neste tic
     else:
         Uws = 0
     if i == 0 and Uws > 0:  # Condição de tratamento e criação de servidores para o primeiro input quando Tu = 0
@@ -65,6 +73,7 @@ for i in range(0, len(linput) + Ttask - 1):
                 if len(v['Users']) == 0:
                     st += 1
 
+
     # print('Retirado Users com task = 0')
     # for k, v in dgServ.items():
     #     if k != 'nserv':
@@ -72,9 +81,27 @@ for i in range(0, len(linput) + Ttask - 1):
     # print(f'USUARIOS TOTAL: {Tu}')
     # print('-=' * 30)
 
-    print(f"{'clock':^7}|{'input':^7}|{'Output':^8}|{'Tip':^7}")
+    for k, v in dgServ.items():
+        if k != 'nserv':
+            if len(v['Users']) != 0:
+                if ups == '':
+                    ups = len(v['Users'])
+                else:
+                    ups = f'{ups}, {len(v["Users"])}'
+
+    tip = f" {dgServ['nserv']} server(s) for {Tu} user(s)"
+    if sc > 0:
+        tip = tip + f" ({sc} server(s) created)"
+
+    file = open('output.txt', 'a')
+    sys.stdout = file
+
+    # print(f"{'clock':^7}|{'input':^7}|{'Output':^8}|{'Tip':^7}")
     if i < len(linput):
-        print(f'{i + 1:^7}|{linput[i]:^7}|{Tu:^8}|{" ":^7}')
+        print(f'{i + 1:^7}|{linput[i]:^7}|{ups:^8}|{tip:^7}')
     else:
-        print(f'{i + 1:^7}|{" ":^7}|{Tu:^8}|{" ":^7}')
+        print(f'{i + 1:^7}|{" ":^7}|{ups:^8}|{tip:^7}')
+
+    file.close()
     ul = sc = st = 0
+    usp = ''
