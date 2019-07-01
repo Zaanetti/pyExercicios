@@ -95,8 +95,8 @@ for k,v in filme.items():
 lista.append(dicionario) #adiciona ao dicionário dentro de uma lista
 lista.append(dicionario.copy()) # copia o dicionário para dentro da lista de maneira que não cria ligação com as proximas alterações do mesmo dicionário
 
-
-
+from operetor import itemgetter # função de uma librarie que organiza um dicionário do menor para o maior
+dicorg = sorted(dicionario.items(), key=itemgetter(1), reverse=True)
 
 
 
@@ -121,3 +121,22 @@ https://pythonacademy.com.br/blog/desenvolva-aplicativos-para-android-ios-com-py
 Web
 
 request > urls > view > model > response
+
+
+
+
+
+    # print('-=' * 30)
+    # print(f'Término dos inputs = {Uws}')
+    # for k, v in dgServ.items():
+    #     if k != 'nserv':
+    #         print(f'{k}: {v}')
+    # print(' ' * 30)
+
+
+    
+    # print('Término dos tics')
+    # for k, v in dgServ.items():
+    #     if k != 'nserv':
+    #         print(f'{k}: {v}')
+    # print(' ' * 30)
