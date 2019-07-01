@@ -77,7 +77,4 @@ for i in range(0, len(linput) + Ttask - 1):
         print(f'{i + 1:^7}|{linput[i]:^7}|{Tu:^8}|{" ":^7}')
     else:
         print(f'{i + 1:^7}|{" ":^7}|{Tu:^8}|{" ":^7}')
-    ul = 0
-    sc = 0
-    st = 0
-
+    ul = sc = st = 0
