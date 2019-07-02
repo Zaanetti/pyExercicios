@@ -98,8 +98,8 @@ lista.append(dicionario.copy()) # copia o dicionário para dentro da lista de ma
 from operetor import itemgetter # função de uma librarie que organiza um dicionário do menor para o maior
 dicorg = sorted(dicionario.items(), key=itemgetter(1), reverse=True)
 
-
-
+# funções
+def funcao()
 
 
 bibliotecas
@@ -116,6 +116,9 @@ https://pygobject.readthedocs.io/en/latest/getting_started.html#fedora-getting-s
 https://pythonacademy.com.br/blog/desenvolva-aplicativos-para-android-ios-com-python-e-kivy
 
 
+https://hackernoon.com/50-popular-python-open-source-projects-on-github-in-2018-c750f9bf56a0
+https://medium.mybridge.co/36-amazing-python-open-source-projects-v-2019-2fe058d79450
+https://medium.mybridge.co/34-amazing-python-open-source-libraries-for-the-past-year-v-2019-93d6ee11aceb
 
 
 Web
