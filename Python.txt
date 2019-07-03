@@ -11,6 +11,8 @@ from biblioteca import func1, func2  importa somente as funções selecionadas d
 print(f'Na posição {p} encontrei o valor {v:.2f}', end='') # usado o f na frente para formatar como uma fstring e o end='' no final para poder emendar um texto no outro
 print('-' * 20) # imprime 20 vezes - na tela
 
+help(funcao) # traz todas as informações da função informada
+
 a += b # abreviação para a = a + b
 
 
@@ -99,7 +101,13 @@ from operetor import itemgetter # função de uma librarie que organiza um dicio
 dicorg = sorted(dicionario.items(), key=itemgetter(1), reverse=True)
 
 # funções
-def funcao()
+def funcao(a, b, c, d=0):  # d=0 parametro opcional
+	""" Doc string """  # Informações da função na função helṕ()
+	global x	# Comando para o programa usar e alterar a variavel global x, variaveis globais são as de fora da função
+
+	x = a + b + c + d
+
+	return x
 
 
 bibliotecas
