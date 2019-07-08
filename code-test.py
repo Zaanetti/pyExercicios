@@ -1,4 +1,5 @@
 # code-test, Autor: Luiz Henrique Zanetti
+import ftplib
 import sys
 
 # Declaração de variáveis usadas no processo
@@ -14,8 +15,8 @@ ups = '0'                                   # Users per server
 tip = ''                                    # Texto de informação sobre alterações feitas no tick corrente
 dgServ = {'nserv': 0}                       # Dicionário de todos os Servers usados no processo  'nserv'= numero de servidores
 
-# path = '/home/luiz/Documentos/meus/pyExercicios/input2.txt'  # lendo o arquivo no linux
-path = 'C:/Users/Zanetti/Documents/Python/pyExercicios/input1.txt'  # lendo o arquivo no windows
+path = '/home/luiz/Documentos/meus/pyExercicios/input1.txt'  # lendo o arquivo no linux
+# path = 'C:/Users/Zanetti/Documents/Python/pyExercicios/input1.txt'  # lendo o arquivo no windows
 linput = open(path).read().split()          # transformando o input.txt em uma lista
 
 Ttask = int(input('Informe o Ttask desejado: '))

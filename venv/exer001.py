@@ -387,3 +387,32 @@ if imop > (sal * 0.3):
 else:
     print('Parabéns pelo imóvel!')
 '''
+
+
+
+class server:
+
+
+
+    name = ''
+    tick = 0
+    lusr = []
+    tusr = len(lusr)
+    sonoff = False
+
+    def servswitch(self):
+
+        server.sonoff = not server.sonoff
+
+
+dgServ = {}
+lser = []
+
+for i in range(0, 5):
+    # dgServ[f'Server{i}'] = server()
+    lser.append(server())
+    lser[i].name = f'Server{i}'
+
+# if 'Server1' in lser[]:
+    print('achou')
+# print(dgServ[].name)
