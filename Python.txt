@@ -17,6 +17,8 @@ a += b # abreviação para a = a + b
 
 NumImagi = 5j #Declaração de numeros imaginários
 
+set() # parecido com uma lista mas que não permite elementos iguais
+
 
 if lógica:
 	comando
@@ -101,6 +103,8 @@ del lanche[3] # remove o elemento c desta lista
 lanche.remove('c') # remove o elemento c da lista
 if 'c' in lanche
 	lanche.remove('c')
+
+sLista = ' '.join(listaC) # Cria uma string com os elementos separados pelo que esta nas aspas simples
 
 
 #dicionários
