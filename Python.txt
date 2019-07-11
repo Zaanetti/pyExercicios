@@ -79,12 +79,24 @@ del(tupla) #deleta tupla
 
 #listas
 lista = [a, b, c, d] # listas são mutaveis e indicadas por []
+lista.index(b) # retorna o indice do primeiro b que ele achar na lista
+lista.index(b, 3) # retorna o indice do primeiro b que ele achar na lista a partir do indice 3
+lista.index(b, 6, 8) # retorna o indice do primeiro b que ele achar na lista a entre o indice 6 e o 8
 lista.append(f) # adiciona um unico elemento a lista
 lista.extend([e, f, g, h])  # inclui mais de um item na lista
 lista.insert(0, aa) # insere o valor no index indicado 
 lista.sort() # traz em odem alfabética ou do menor para o maior
 lista.sort(reverse=True) # traz do maior para o menor
 len(lista) # numero de elementos na lista
+for indice, elemento in enumerate(lista)
+	print(indice, elemento)
+	"""irá printar
+		0 elemento0
+		1 elemento1
+		2 elemento2"""
+
+outro ex: lista = list(enumerate(lista))
+		  output: [(0, elemento0), (1, elemento1), (2, elemento2)]    
 
 	#como inputar valores manualmente em uma lista
 valores = list()
