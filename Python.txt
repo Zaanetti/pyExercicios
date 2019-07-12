@@ -72,13 +72,41 @@ while lógica:
 
 
 #tuplas
-tupla = (a, b, c, d)  #tuplas são imutaveis e são indicadas por () parenteses
+ # tuplas são imutaveis e são indicadas por () parenteses
+ # tuplas são mais rapidas de serem executada no programa
+ # tuplas trazem mais segurança ao seu sistema
+ # na tuplas não temos shallow copy
+tupla = (a, b, c, d)  
+tupla = a, b, c, d # outra maneira de declarar tupla
+tupla = (4,) # tuplas são definidas pela virgula, se retirar a virgula, ele intenderá que é uma varável de outro valor
+tupla = 4,  # idem a linha de cima
+tupla = tuple(range[11])  # criando uma tupla com 11 elementos de 0 a 10
+
+  #desempacotamento de tuplas
+tupla = (5, 4, 7)
+num1, num2, num3 = tupla  # o numero de varáveis deve ser igual ao numero de elementos
+
+tuplaconc = tupla1 + tupla2  # concatenando tuplas
+tupla1 = tupla1 + tupla2  # podemos sobreescrever tuplas, mas não altera-las
+
+for indice, valor in enumerate(tupla)  # printa os indices e seus respectivos valores
+	print(indice, valor)		
+
+tupla.count('e')  # conta quantos elementos 'e' a tupla possue
+tupla.index('e')  # informa o indice do primeiro 'e' que ele encontrar na tupla
 print(sorted(tupla))  #traz em odem alfabética ou do menor para o maior
 del(tupla) #deleta tupla
 
+sum(tupla)  # soma dos elementos da tupla
+max(tupla)	# maximo valor da tupla
+min(tupla)	# minimo valor da tupla
+len(tupla)	# tamanho da tupla
+
+
 
 #listas
-lista = [a, b, c, d] # listas são mutaveis e indicadas por []
+ # listas são mutaveis e indicadas por []
+lista = [a, b, c, d] 
 lista.index(b) # retorna o indice do primeiro b que ele achar na lista
 lista.index(b, 3) # retorna o indice do primeiro b que ele achar na lista a partir do indice 3
 lista.index(b, 6, 8) # retorna o indice do primeiro b que ele achar na lista a entre o indice 6 e o 8
@@ -103,9 +131,12 @@ valores = list()
 for cont in range(0, 5)
 	valores.append(int(input('Digite um valor: ')))
 
-
+ #shallow copy	
 listaC = listaB # cria uma ligação entre as duas listas, as duas terão os mesmos valores e o que for alterada em uma será alterada em outra
+ 
+ #deep copy
 listaC = listaB[:] # apenas copia os valores da listaB para a listaC, mas neste caso as duas são idependentes uma da outra sem a ligação feita na linha de cima
+listaC = listaB.copy() # apenas copia os valores da listaB para a listaC, mas neste caso as duas são idependentes uma da outra sem a ligação feita na linha de cima
 
 	# maneiras de retirar um elemento da lista
 lanche.pop() #remove o ultimo item da lisra
@@ -116,10 +147,26 @@ lanche.remove('c') # remove o elemento c da lista
 if 'c' in lanche
 	lanche.remove('c')
 
+sum(lista)  # soma dos elementos da lista
+max(lista)	# maximo valor da lista
+min(lista)	# minimo valor da lista
+len(lista)	# tamanho da lista
+
+lisat[0], lista[1] = lista[1], lista[0]  # invertendo posição dos valores da lista
+
+# desempacotando lista, o numero de variaveis deve ser igual ao numero de elementos na lista 
+lista[1, 2, 3]
+num1, num2, num3 = lista
+
+
+
 sLista = ' '.join(listaC) # Cria uma string com os elementos separados pelo que esta nas aspas simples
 
 
 #dicionários
+ # dicionários são mutaveis e representados por {}
+ 
+ # dicionários são coleções de tipo chave/valor
 dicionario = {'nome': 'a', 'sexo': 'b', 'rua': 'c', 'numero': 25}
 dicionario[cidade] = 'd' #adiciona um item ao dicionário
 del dicionario[sexo] # deleta o item do dicionário
@@ -150,6 +197,12 @@ def funcao(a, b, c, d=0):  # d=0 parametro opcional
 	x = a + b + c + d
 
 	return 
+
+
+#slicing de coleções - tanto para tupla, lista e dicionario
+
+colecao[inicio:fim:passo]
+
 
 
 bibliotecas
