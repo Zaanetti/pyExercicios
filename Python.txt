@@ -4,7 +4,7 @@ Python
 
 Importar bibliotecas
 
-import biblioteca  importa todas as funções da bibliotecas
+import biblioteca  # importa todas as funções da bibliotecas
 
 from biblioteca import func1, func2  importa somente as funções selecionadas de uma dada biblioteca
 
@@ -17,7 +17,9 @@ a += b # abreviação para a = a + b
 
 NumImagi = 5j #Declaração de numeros imaginários
 
-set() # parecido com uma lista mas que não permite elementos iguais
+iteravei = Tupla, lista, dicionário, set e strings
+
+O tipo None sempre é considerado False
 
 
 if lógica:
@@ -165,43 +167,191 @@ sLista = ' '.join(listaC) # Cria uma string com os elementos separados pelo que 
 
 #dicionários
  # dicionários são mutaveis e representados por {}
- 
+ # dicionarios são conhecidos também como mapas em outras linguagens
  # dicionários são coleções de tipo chave/valor
+  TANTO AS CHAVES QUANTO OS VALORES PODEM RECEBER ELEMENTOS DE QUALQUER TIPO(int, float, string, tupla, lista, dicionário, boolean, etc)
+ # recomendado usar tuplas nas chaves pois as tuplas são imutaveis, trazendo segurança aos dados do dicionário
 dicionario = {'nome': 'a', 'sexo': 'b', 'rua': 'c', 'numero': 25}
-dicionario[cidade] = 'd' #adiciona um item ao dicionário
-del dicionario[sexo] # deleta o item do dicionário
-
-dicionario = {'nome': 'a',
+dicionario = dict(nome= 'a', sexo= 'b', rua= 'c') # outra maneira de declarar dicionários
+dicionario = {'nome': 'a',		# outra maneira de declarar dicionários
 			  'sexo': 'b',
 			  'rua': 'c',
 			  'numero': 25	
 			 }
+ Maneira MASSA e pratica de criar um dicionário
+dicionario = {}.fromkeys(['nome', 'pontos', 'email', 'profile'], 'desconhecido')
+	"""o retorno disso é 
+	{'nome': 'desconhecido', 'pontos': 'desconhecido', 'email': 'desconhecido', 'profile': 'desconhecido'}
+
+	ele atribui o 'deschonhecido' como valor de todas as chaves 
+	
+	MAS CUIDADO, pois:
+	dicionario = {}.fromkeys('nome', 'luiz') retorna
+	{'n': 'luiz', 'o': 'luiz', 'm': 'luiz', 'e': 'luiz'}
+
+
+	"""
+dicionario[cidade] = 'd' #adiciona / atualizar um item ao dicionário
+ # outra maneira de adicionar / atualizar itens ao dicionario
+novo_dado = {'cidade': 'd'}
+dicionario.update(novo_dado)
+
+ # removendo itens de um dicionario
+dicionario.pop('cidade') # no .pop() do dicionário SEMPRE é obrigatório passar a chave
+ret = dicionario.pop('cidade') # a função pop() também retorna o valor removido, neste caso 'd'
+del in dicionário['cidade'] # outra forma de remover um item
+
+dicionario.clear() # limpa todo o dicionário
+
+dicionario.copy() # faz o deep copy do dicionário
+dicionario = dic2 # faz o shallow copy
+
+print(dicionário['nome']) # imprime o valor relacionado a essa chave quando a chave não existe ele retorna KeyError
+print(dicionário.get('nome')) # FORMA RECOMENDADA - imprime o valor relacionado a esta chave, quando a chave não existe ele retorna None
+print(dicionário.get('nomeinexistente', 'Nome não encontrado')) # FORMA RECOMENDADA - caso não encontrado a chave informada ele retorna a mensagem que você digitar, neste caso 'Nome não encontrado'
+
+print('nome' in dicionario)  # retorna o True ou falso
+
 dicionario.values() # pega os valores de declarados nas keys (a, b, c, 25)
 dicionario.keys() # pega os nomes das keys (nome, sexo, rua, numero)
 dicionario.items() # traz as keys e seus respectivos valores em seguida ('nome': 'a', 'sexo': 'b', 'rua': 'c', 'numero': 25)
 
-for k,v in filme.items():
+ # desempacotamento do dicionario k = chaves, v = valores
+for k,v in dicionario.items():
 	print(f'O {k} é {v}')
 
-lista.append(dicionario) #adiciona ao dicionário dentro de uma lista
-lista.append(dicionario.copy()) # copia o dicionário para dentro da lista de maneira que não cria ligação com as proximas alterações do mesmo dicionário
+lista.append(dicionario) #adiciona ao dicionário dentro de uma lista - shalow copy
+lista.append(dicionario.copy()) # copia o dicionário para dentro da lista - deep copy
 
 from operetor import itemgetter # função de uma librarie que organiza um dicionário do menor para o maior
 dicorg = sorted(dicionario.items(), key=itemgetter(1), reverse=True)
+
+sum(dicionario.values())    # soma dos elementos do dicionario por tanto que os valores sejam int ou float
+max(dicionario.values())	# maximo valor do dicionario por tanto que os valores sejam int ou float
+min(dicionario.values())	# minimo valor do dicionario por tanto que os valores sejam int ou float
+len(dicionario)	# tamanho do dicionario
+
+ #slicing de coleções - tanto para tupla, lista e dicionario
+colecao[inicio:fim:passo]
+
+# Sets
+ # parecido com uma lista mas que não permite elementos iguais
+ # NÃO SÃO INDEXADOS
+ # por mais que usem {} eles não são dicionarios, pois possuem apenas valores
+ # o set não respeita a ordenção de input, ele mesmo organiza os elementos
+
+set = set({4, 3, 1, 2, 3}) # retorna {1, 2, 3, 4}
+set = {4, 3, 1, 2, 3}  # retorna {1, 2, 3, 4}
+set = set('luiz') # retorna {'z', 'i', 'l', 'u'}
+
+set(lista) #gera o set de uma lista e tuplas
+set(tupla)
+
+set.add(3) # adicionando elemento no set, caso repetido ele apenas ignora o input
+
+set.remove(3) # remove o valor especificado nos parenteses, NÃO é pelo INDICE, caso ele não exista no set, é dado KeyError
+set.discard(3) # remove o valor especificado nos parenteses, NÃO é pelo INDICE, caso ele não exista no set nenhum erro é retornado
+set.clear() # remove todos os elementos do set
+
+novoset = set.copy() # deep copy
+
+novoset = set # shallow copy
+
+# união de conjuntos
+useta = set1.union(set2) # gera um novo set que uni os dois sets, eliminando os elementos repetidos
+usetb = set1 | set2 # gera um novo set que uni os dois sets, eliminando os elementos repetidos - outra forma
+
+# interceção conjuntos
+iseta = set1.intersect(set2) # gera um novo set somente com os elementos que aparecem no set1 e no set2
+isetb = set1 & set2 # gera um novo set somente com os elementos que aparecem no set1 e no set2 - outra forma
+
+# diferença de conjuntos
+dset1a = set1.dif(set2) # gera um set de elementos só tem no set1
+dset2a = set2.dif(set1) # gera um set de elementos só tem no set2
+
+sum(dicionario.values())    # soma dos elementos do set por tanto que os valores sejam int ou float
+max(dicionario.values())	# maximo valor do set por tanto que os valores sejam int ou float
+min(dicionario.values())	# minimo valor do set por tanto que os valores sejam int ou float
+len(dicionario)	# tamanho do set
+
+
+
+# modulo collections, funções uteis para coleções(Tupla, lista, dicionário, set)
+
+from collections import Counter  # recebe um iterável e cria um collections.Couter parecido com um dicionário, onde a chave é o valor da coleção passada e o valor é o numero de ocorrencias deste elemento na coleção passada
+from collections import defaultdict # cria um dicionário onde não ocorre Keyerror, sempre que á a tentativa de acessar ou printar uma chave que não exista no dicionário ele atribui um valor padrão através de lambda 
+from collections import OrderedDict # com o OrderedDict cria-se um dicionário onde ele mantem sempre a sequencia de incerção de chaves e valores, pois em dicionários comuns, conforme inumeras incerções de chaves e valores ele não nos garante que a ordem de inserção seja mantida
+from collections import namedtuple # Tuplas diferenciadas, onde criamos modelos de tuplas onde damos um nome e os parametros
+from collections import deque # são listas de alta performance -uma lista com alguma funções adicionais que ajudam bastante
+ 
+ #Counter
+Counter = Counter(lista) 
+CountS = Counter(Texto) # Inclusive conta o numero de letras e palavras em uma string
+CountS.most_common(5) # retorna as 5 palavras que mais aparecem em uma string 
+
+ #defaultdict
+dDict = defaultdict(lambda: 0)
+
+ #OrderedDict
+oDict = OrderedDict({'a': 1, 'b': 2})
+ """Exemplo: Em um if dic1 == dic2 o python compara se há chaves iguais e valores iguais independende da ordem 
+ 	agora no caso de um OrderedDict o if leva em consideração até a se a ordem das chaves estão iguais"""
+
+ #namedtuple
+  #declarando
+cachorro = namedtuple('cachorro', 'idade raca nome') # forma 1
+cachorro = namedtuple('cachorro', 'idade, raca, nome') # forma 2
+cachorro = namedtuple('cachorro', ['idade', 'raca', 'nome']) # forma 3 - ESSA É MELHOR visualmente
+  #usando
+zouk = cachorro(idade=6, raca='bernese', nome='Zouk')
+  #Acessando os dados
+zouk[0] #idade # forma classica pelo indice da tupla -forma 1
+zouk[1] #raca # forma classica pelo indice da tupla -forma 1
+zouk[2] #nome # forma classica pelo indice da tupla -forma 1
+
+zouk.idade # Direto pelo parametro da tupla -forma 2
+zouk.raca # Direto pelo parametro da tupla -forma 2
+zouk.nome # Direto pelo parametro da tupla -forma 2
+
+ #deque
+deq = deque()
+
+deq.appendleft('a') #  adiciona no inicio da lista - funções adicionais
+deq.popleft() # retira o primeiro elemnento da lista - funções adicionais
+
+
 
 # funções
 def funcao(a, b, c, d=0):  # d=0 parametro opcional
 	""" Doc string """  # Informações da função na função helṕ()
 	global x	# Comando para o programa usar e alterar a variavel global x, variaveis globais são as de fora da função
-
 	x = a + b + c + d
+	if a == b:		#podem haver varias opções de retorno, porém ele retornará apenas um dos returns
+		return a
+	elif c != d:
+		return c
+	elif a == 999
+		return 1, 2, 3, 4
+	return x 
 
-	return 
+
+num1, num2, num3, num4 = funcao(999, 0, 0) # declarando varias variaveis com um retorno de uma função que traz uma tupla no retorno
+
+def function(num1, num2, fun=funcao): # declarando um dos parametros como uma função
+	return fun(num1, num2)
+
+def funinter():  # exemplo de uma função com outra dentro
+	contador
+	def dentro(): # esta função só e reconhecida dentro da função funinter
+		nonlocal contador # non local é para pegar uma variavel de uma função acima
+		contador += 1
+		return contador
+	return dentro()
+
+func = funcao # nada muito usual, mas você pode declarar uma varivel igualando ela a uma função sem os ()
 
 
-#slicing de coleções - tanto para tupla, lista e dicionario
 
-colecao[inicio:fim:passo]
 
 
 
@@ -227,22 +377,3 @@ https://medium.mybridge.co/34-amazing-python-open-source-libraries-for-the-past-
 Web
 
 request > urls > view > model > response
-
-
-
-
-
-    # print('-=' * 30)
-    # print(f'Término dos inputs = {Uws}')
-    # for k, v in dgServ.items():
-    #     if k != 'nserv':
-    #         print(f'{k}: {v}')
-    # print(' ' * 30)
-
-
-    
-    # print('Término dos tics')
-    # for k, v in dgServ.items():
-    #     if k != 'nserv':
-    #         print(f'{k}: {v}')
-    # print(' ' * 30)
