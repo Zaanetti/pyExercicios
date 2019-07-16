@@ -322,6 +322,8 @@ deq.popleft() # retira o primeiro elemnento da lista - funções adicionais
 
 
 # funções
+# Ordem de parametros a sere passados def fun(obrigatórios, *args, opcionais=True, **kwargs)
+
 def funcao(a, b, c, d=0):  # d=0 parametro opcional
 	""" Doc string """  # Informações da função na função helṕ()
 	global x	# Comando para o programa usar e alterar a variavel global x, variaveis globais são as de fora da função
@@ -351,6 +353,20 @@ def funinter():  # exemplo de uma função com outra dentro
 func = funcao # nada muito usual, mas você pode declarar uma varivel igualando ela a uma função sem os ()
 
 
+# *args
+def funarg(*args):  # *args permite que seja passado varias variaveis transforma em uma tupla os inumeros elementos passados
+	pass
+
+funarg(*lista) # o * indica ao python para que desenpacote a lista ao executar a funcão, pois passar a lista em o * causa keyerror 
+
+# **kwrags
+def funkwarg(**kwrags): # exige que os parametros passados sejam nomeados, pois ele transforma os paramentros passados em um dicionário
+	pass
+
+funkwarg(nome=luiz, idade=26, code=python) # modo de chamar a função com **kwargs
+	# neste caso abaixo, podemos informar os ** tanto se a função tiver como paramentro **kwargs
+	# rambem como se a função tiver paramentos (a, b, c), porém neste caso o dicionário deve ter chaves chamadas a, b e c com seus respectivos valores, se o dicionário tiver chaves com o mesmo nome dos parametros obrigatórios ele pode ser desempacotado com ** 
+funkwarg(**dicionario) # modo de chamar a função com **kwargs desenpacotando um dicionário
 
 
 
