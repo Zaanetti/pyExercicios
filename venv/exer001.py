@@ -404,15 +404,27 @@ class server:
 
         server.sonoff = not server.sonoff
 
+#
+# dgServ = {}
+# lser = []
+#
+# for i in range(0, 5):
+#     dgServ[f'Server{i}'] = server()
+#     lser.append(server())
+#     lser[i].name = f'Server{i}'
+#
+# if 'Server1' in lser[:].name:
+#     print('achou')
+# # print(dgServ[].name)
 
-dgServ = {}
-lser = []
 
-for i in range(0, 5):
-    # dgServ[f'Server{i}'] = server()
-    lser.append(server())
-    lser[i].name = f'Server{i}'
+# a = int(input('Digite o ano: '))
+# print('Este é bisexto.') if (a % 4) == 0 else print('Não é bisexto')
 
-# if 'Server1' in lser[]:
-    print('achou')
-# print(dgServ[].name)
+
+lis = [20, 30, 9, 7, 8, 15]
+nlis = [val * 2 if val > 10 else val for val in lis]
+# for val in lis:
+#     nlis.append(val * 2) if val > 10 else nlis.append(val)
+print(nlis)
+

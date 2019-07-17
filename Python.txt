@@ -160,10 +160,12 @@ lisat[0], lista[1] = lista[1], lista[0]  # invertendo posição dos valores da l
 lista[1, 2, 3]
 num1, num2, num3 = lista
 
-
-
 sLista = ' '.join(listaC) # Cria uma string com os elementos separados pelo que esta nas aspas simples
 
+novalista = [valor * 2 for valor in lista] # list comprehension exmplo1
+novalista = [valor * 2 for valor in lista if valor > 10] # list comprehension com if exmplo2
+novalista = [ valor * 2 if valor > 10 else valor * 3 for valor in lista] # list comprehension com if else exmplo3
+matriz = [[col for col in range(1, 4)] for lin in range(1, 4)] # list comprehension para criar uma matriz
 
 #dicionários
  # dicionários são mutaveis e representados por {}
@@ -231,6 +233,19 @@ max(dicionario.values())	# maximo valor do dicionario por tanto que os valores s
 min(dicionario.values())	# minimo valor do dicionario por tanto que os valores sejam int ou float
 len(dicionario)	# tamanho do dicionario
 
+
+
+novodict = {chave: valor * 2 for chave, valor in dicionario} # dict comprehension exemplo1
+novodict = {valor: valor ** 2 for valor in listupla} # dict comprehension tranformando listas/tuplas em dicionáriop exemplo2
+
+chavels = 'abcde'
+valores = [1, 2, 3, 4, 5]
+mistura = chaves[i], valores[i] for i in range(0, len(chaves)) # dict comprehension unificando iteraveis em apenas um dicionário exemplo3
+
+novodict = {num: ('par' if num % 2 == 0 else 'impar') for num in numeros}  # dict comprehension usnado if para inputar os valores exemplo4
+
+
+
  #slicing de coleções - tanto para tupla, lista e dicionario
 colecao[inicio:fim:passo]
 
@@ -274,6 +289,10 @@ max(dicionario.values())	# maximo valor do set por tanto que os valores sejam in
 min(dicionario.values())	# minimo valor do set por tanto que os valores sejam int ou float
 len(dicionario)	# tamanho do set
 
+
+novoset = {valor * 2 for valor in range(1, 8)} # set comprehension exmplo1
+novoset = {valor * 2 for valor in range(1, 8) if valor > 10} # set comprehension com if exmplo2
+novoset = {valor * 2 if valor > 10 else valor * 3 for valor in  range(1, 8)} # set comprehension com if else exmplo3
 
 
 # modulo collections, funções uteis para coleções(Tupla, lista, dicionário, set)
@@ -367,6 +386,51 @@ funkwarg(nome=luiz, idade=26, code=python) # modo de chamar a função com **kwa
 	# neste caso abaixo, podemos informar os ** tanto se a função tiver como paramentro **kwargs
 	# rambem como se a função tiver paramentos (a, b, c), porém neste caso o dicionário deve ter chaves chamadas a, b e c com seus respectivos valores, se o dicionário tiver chaves com o mesmo nome dos parametros obrigatórios ele pode ser desempacotado com ** 
 funkwarg(**dicionario) # modo de chamar a função com **kwargs desenpacotando um dicionário
+
+
+
+#lambda
+	#lambda são funções sem nome 
+
+lambda x:  3 * x + 1 # declarando uma lambda
+
+# como utilizar
+calc = lambda x: 3 * x + 1  # lambda exemplo1
+calc(4) #retornara 13
+
+nome_completo = lambda nome, sobrenome: nome.strip().titled() + ' ' + sobrenome.strip().titled()  # lambda exemplo2
+calc2 = lambda x, y, z: x**2 + y**2 + z**2  # lambda exemplo3
+
+def gera_fun_quadratica(a, b ,c):	# criando uma função com lambda
+	return lambda x: a * x ** 2 + b * x + c
+
+teste = gera_fun_quadratica(2, 3, -5) # igualando uma variavel a função gerada e passado os valores fixos de a, b e c
+
+teste(0) # onde o valor entre 0 é o valor dado pra x e então junto com os valores estabelecidos ao declarar a varável  o python calcula o resultado de toda a formuda da função criada 
+	#retornaria  -5, pois  5 * 0 ** 2 + 3 * 0 + (-5) 	
+
+
+#map
+	# Faz o mapeamento de valores para função
+	# retorna um obj do tipo map
+	# após o primeiro uso/conversão dos elemtnos internos do map ele é apagado automaticamente
+
+var = map(fun, iteravel) # modo de uso exemplo1
+
+var = map(lambda x: x**, iteravel) # usando lambda exemplo2
+
+var = list(map(fun, iteravel)) # modo RECOMENDADO DE USO, pois após a visualização dos elementos ou conversão o map é apagado automaticamente exemplo3
+
+  #exemplo4
+cidades = [('Berlim, 29'), ('Cairo', 36)]  # lista com tuplas onde informa a cidade e a temperatura em ºC
+
+c_para_f = lambda dado: (dado[0], (9/5) * dado[1] + 32)  # lambda onde apenas mantem o nome da cidade(dado[0), mas ao pegar o valor em ºC(dado[1]) converte para ºF 
+
+conversão = list(map(c_para_f, cidades)) # usando maps para realizar a conversão e tranformando em uma lista
+
+
+
+
 
 
 
