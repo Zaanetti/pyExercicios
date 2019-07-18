@@ -413,6 +413,7 @@ teste(0) # onde o valor entre 0 é o valor dado pra x e então junto com os valo
 #map
 	# Faz o mapeamento de valores para função
 	# retorna um obj do tipo map
+	# geralmente sua função atua/ altera os elementos do iterável
 	# após o primeiro uso/conversão dos elemtnos internos do map ele é apagado automaticamente
 
 var = map(fun, iteravel) # modo de uso exemplo1
@@ -428,17 +429,95 @@ c_para_f = lambda dado: (dado[0], (9/5) * dado[1] + 32)  # lambda onde apenas ma
 
 conversão = list(map(c_para_f, cidades)) # usando maps para realizar a conversão e tranformando em uma lista
 
+ lista = list(map(lambda nome: f'Sua prof é {nome}', filter(lambda nome: len(nome) < 5, nomes)))  # Criando uma lista usando Maps e Filters onde ele filtrar os nomes com menos de 5 caracteres e o maps faz com que printe o nome junto ao texto digitado exemplo5
+
+#Filter
+  # filter() - Serve para filtrar dados de uma determinada coleção
+  # o retorno do filter é igual ao do maps, após o primeiro uso é apagado automaticamente
+  # a função utilizada no filter sempre deve retornar True or False
+
+filter(fun, iterável) # modo de usaron de a função ou lambda especicado em fun deve retornar true or false caso seja True ele traz o elemento exemplo1
+
+filter(None, dados)  # elimina elementos em branco em uma lista Exemplo2 - DICA 
+
+  #exemplo3
+ usuários = [															# lista com usuários e seus tweets
+ 			{'username': 'luiz', 'tweets': ['Ola tudo bem?', 'Oi']}
+ 			{'username': 'klaus', 'tweets': []}
+ 			{'username': 'amanda', 'tweets': ['hahaha']}
+ 			{'username': 'alisson', 'tweets': []}
+ ]
+
+inativos = list(filter(lambda usuario: not usuario['tweets'], usuários))  # criando uma lista com o filter onde ele só irá filtrar os usuários  que não tweetaram nada
+
+lista = list(map(lambda nome: f'Sua prof é {nome}', filter(lambda nome: len(nome) < 5, nomes)))  # Criando uma lista usando Maps e Filters onde ele filtrar os nomes com menos de 5 caracteres e o maps faz com que printe o nome junto ao texto digitado exemplo4
+
+
+#Reduce
+ 	# Não é muito recomendado o uso, mas caso queria usa-la deve ser feito um (from functools import reduce)
+ 	# na maioria dos casos um loop for é mais legivel
+ 	# Seu funcionamento é como uma fatorial, digamos que a função passada seja somar apenas os elementos, o reduce irá fazer: a + b = res1, res1 + c = res2, res2 + d = res3, res3 + e = res4 ... resn 
+ 	# seu resultado é sempre um elemento só.
+
+reduce(fun, iterável) # neste caso a função do reduce sempre deve pedir 2 elementos
+
+res = 1
+for n in valores:  # loop que se faz a mesma função do reduce
+	res = res * n  # no lugar da operão de multiplicação pode ser colocado qualquer outra operação sempre entre o resultado anterior com o proximo valor
+
+
+#Any e All
+	# PARA O all() UM ITERAVEL VAZIO É TRUE - ATENÇÃO!!!
+
+all()  # retorna True / verifica se todos os elementos do iterável são verdadeiros, RETORNA TRUE PARA ITERAVEIS VAZIOS - como se fosse um porta AND para todos os elementos do iterável, caso aja um como false ele retorna false, percebemos o comportamento de uma AND, salvo a exceção de quando o iterável esta VAZIO que ele retorna True
+all([nome[0] == 'C' for nome in nomes])  # Verifica se a primeira letra(nome[0]) de todos os nomes da lista começam com C caso 1 dos nomes não comece ele irá retornar falso exemplo1
+
+
+any() # retorna True / verifica se um elementos do iterável for verdadeiro, RETORNA FALSE PARA ITERAVEIS VAZIOS, percebemos o comportamento de uma OR
+any(letra for letra in 'luiz' if letra in 'aeiou')  # verifica letra-a-letra em 'luiz' se é semenhande a alguma letra de 'aeiou' se achar uma letra se quer retornará True, caso não ache nenhuma retornará False exemplo1
 
 
 
+#Generator expression
+	# ocupa menos recurso em memória
+	# semelhante ao list comprehenson
+	# serve como um "esqueleto" para gerar iteráveis com list comprehension
+	# ELE PODE SER ITERÁDO TAMBÉM
+
+gen = (nome[0] == 'C' for nome in nomes)  # faz parte do list comprehenson, ele é parecido, mas é especificado entre (), neste caso ele ele gera uma variável do tipo generator, e aguarda ser atribuida a uma lista, tupla ou dicinário para poder executar as instruções entre os ()
+ 
+lista = list(res) # gera uma lista a partir das intruções dentro de res, exemplo1  de uso
 
 
 
+#Sorted
+	# Podemos usar em qualquer iterável
+	# retorna SEMPRE uma lista orgaaizando os elementos, Não modifica a atual
+numeros = [6, 1, 8, 2]
+
+sorted(numeros) # retorna SEMPRE uma lista com os elementos ordenados do menos para o maior, mas não altera a lista passada exemplo1
+
+sorted(numeros, reverse=True)  # retorna a lista organizada, mas desta vez do maior para o menor exeṕlo2
+x = tuple(sorted(numeros)) # exemplo3
+
+ #exemplo4
+usuários = [															# lista com usuários e seus tweets
+ 			{'username': 'luiz', 'tweets': ['Ola tudo bem?', 'Oi']}
+ 			{'username': 'klaus', 'tweets': []}
+ 			{'username': 'amanda', 'tweets': ['hahaha']}
+ 			{'username': 'alisson', 'tweets': []}
+ ]
+
+novosort = sorted(usuários, key= lambda usu: usu['username'])  # cria um novo iterável organzando os elementos pelo username por ordem alfabética
+novosort = sorted(usuários, key= lambda usu: usu['username'], reverse=True) # cria um novo iterável organzando os elementos pelo username por ordem alfabética reversa
+novosort = sorted(usuários, key= lambda usu: len(usu['tweets'])) # cria um novo iterável organzando os elementos pelo numero de tweets do menos para o maior
 
 bibliotecas
 
 math - operações matematicas mais complexas e especificas 
-
+statistics - para trabalhar com dados estatisticos
+functools - 
+sys - getsizeof(variável) # função que diz o espaço em memória ocupado pela variável especificada
 
 
 Site interessante:
