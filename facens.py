@@ -122,18 +122,73 @@ for i in range(4, 6):
 # v = []
 # [[v.append(0) for l in range(3)] for c in range(5)]
 # [print(l) for l in v]
+# def parimpar(numero):
+# 	if numero % 2:
+# 		return 'Impar'
+# 	else:
+# 		return 'Par'
+	
+
+# print(parimpar(int(input('Numero: '))))
+
+
+# def fatorial(n):
+# 	fat = n
+# 	while n > 1:
+# 		fat *= (n - 1)
+# 		n -= 1
+# 	return fat
+
+
+
+# def f(n):
+# 	if n == 1:
+# 		return 1
+# 	else:
+# 		return n * f(n-1)
+
+# print(f(4))
+
+def imprimiMenu():
+	print(""" Selecione a opção:
+ 1 - Mostrar as cadeiras
+ 2 - Contar lugares disponíveis
+ 3 - Comprar cadeira
+ 4 - Cancelar compra
+ 5 - Terminar operação
+		""")
+
+
 def imprimiMatriz():
 	[print(l) for l in lugares]
 
 
-def contador():
+def contador(imprimir=False):
 	cont = 0
 	for lin in range(4):
 		for col in range(5):
 			if lugares[lin][col] != 0:
 				cont += 1
+	if imprimir:			
+		print(f'Lugares disponiveis: {20 - cont}')
+	return 20 - cont
 
-	return print(f'Lugares disponiveis: {20 - cont}')
+
+def cancelarCompra():
+	if contador() == 20:
+		print('Nenhum ascento comprado')
+		return (-1)
+	asc = int(input('Quantos ascentos irá cancelar? '))
+	for i in range(asc):
+		while asc > 0:
+			f_sel = int(input('Fileira desejada: '))
+			c_sel = int(input('Cadeira desejada: '))
+			if lugares[f_sel][c_sel] != 0:
+				lugares[f_sel][c_sel] = 0
+				asc -= 1
+			else:
+				print('Cadeira já esta vaga, delecione outra cadeira.')
+
 
 
 def ocuparCadeiras():
@@ -151,15 +206,35 @@ def ocuparCadeiras():
 
 lugares = []
 cadeiras = []
+sair = False
+arquivo = open('nota.txt', 'w')
+
+arquivo.write('Preço do ingresso = 12 reais')
 
 for i in range(5):
 	cadeiras.append(0)
 for i in range (4):
 	lugares.append(cadeiras.copy())
-while(True):
-	imprimiMatriz()
-	contador()
-	ocuparCadeiras()
-	imprimiMatriz()
-	if str(input('Deseja comprar mais?(S/N) ')).upper == 'N':
-		break
+
+while sair == False:
+	imprimiMenu()
+	entrada = int(input())
+	print('-=' * 30)
+	if entrada == 1:
+		imprimiMatriz()
+		print('-=' * 30)		
+	elif entrada == 2:
+		contador(True)
+		print('-=' * 30)
+	elif entrada == 3:
+		ocuparCadeiras()
+		print('-=' * 30)
+	elif (entrada == 4):
+		if cancelarCompra() == -1:
+			continue
+		print('-=' * 30)
+	elif entrada == 5:
+		sair = True
+	else:
+		print('Opção invalida')
+		print('-=' * 30)
