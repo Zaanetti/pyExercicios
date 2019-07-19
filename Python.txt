@@ -532,6 +532,7 @@ https://hackernoon.com/50-popular-python-open-source-projects-on-github-in-2018-
 https://medium.mybridge.co/36-amazing-python-open-source-projects-v-2019-2fe058d79450
 https://medium.mybridge.co/34-amazing-python-open-source-libraries-for-the-past-year-v-2019-93d6ee11aceb
 
+https://www.dataquest.io/blog/free-datasets-for-projects/
 
 Web
 
