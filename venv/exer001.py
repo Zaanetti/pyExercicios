@@ -389,6 +389,36 @@ else:
 '''
 
 
+# exercicio - loteria
+
+from random import randint
+from random import sample
+
+tickets = []
+
+
+while len(tickets) < 10:
+    numeros = set()
+    while len(numeros) < 3:
+        numeros.add(randint(1, 39))
+    while len(numeros) < 6:
+        numeros.add(randint(40, 80))
+    numeros = sorted(numeros)
+
+    tickets.append(numeros.copy())
+
+
+print(('-/' * 20))
+[print(n) for n in tickets]
+
+
+
+
+
+
+
+
+"""
 
 class server:
 
@@ -428,3 +458,4 @@ nlis = [val * 2 if val > 10 else val for val in lis]
 #     nlis.append(val * 2) if val > 10 else nlis.append(val)
 print(nlis)
 
+"""

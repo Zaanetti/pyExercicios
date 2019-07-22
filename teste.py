@@ -37,3 +37,26 @@ for s in range(1, 3):
 
 # print(dgServ['lista']['tic'])  # mostra o valor de uma key de um dicionário dentro de outro dicionário
 
+
+# exercicio - loteria
+
+from random import randint
+from random import sample
+
+tickets = []
+
+while len(tickets) < 1:
+    num0139 = set()
+    num4080 = set()
+    while len(num0139) < 3:
+        num0139.add(randint(1, 39))
+    while len(num4080) < 3:
+        num4080.add(randint(40, 80))
+    numero = num0139.union(num4080)
+    print(numero)
+
+    tickets.append(numero.copy())
+
+
+print(('-/' * 20))
+[print(n) for n in tickets]
