@@ -1,5 +1,4 @@
 # code-test, Autor: Luiz Henrique Zanetti
-import ftplib
 import sys
 
 # Declaração de variáveis usadas no processo
@@ -32,7 +31,6 @@ print(f'Numero de tasks por usuário (Ttask) = {Ttask}')
 print('-=' * 40)
 print(f"\n{'tick':^7}|{'input':^7}|{'Output':^14}|{'Tip':^25}")
 print('--' * 40)
-
 # Inicio do processoa principal
 for i in range(0, len(linput) + Ttask - 1):
     if i < len(linput):

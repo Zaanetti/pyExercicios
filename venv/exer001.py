@@ -191,7 +191,7 @@ print(sor)
 
 # exercicio 021
 
-#import playsound
+# import playsound
 # cond = str(input('Deseja tocar a musica?(s/N) '))
 
 
@@ -203,8 +203,8 @@ print(sor)
 
 # win10
   '''
-#audio = r'C:\Users\Zanetti\Downloads\metal-guitar-11.mp3'
-#playsound.playsound(audio)
+# audio = r'C:\Users\Zanetti\Downloads\metal-guitar-11.mp3'
+# playsound.playsound(audio)
 
 
 # exercicio 022
@@ -387,36 +387,68 @@ if imop > (sal * 0.3):
 else:
     print('Parabéns pelo imóvel!')
 '''
-
-
+"""
 # exercicio - loteria
 
+
+from os import system, name
 from random import randint
 from random import sample
-
-tickets = []
-
-
-while len(tickets) < 10:
-    numeros = set()
-    while len(numeros) < 3:
-        numeros.add(randint(1, 39))
-    while len(numeros) < 6:
-        numeros.add(randint(40, 80))
-    numeros = sorted(numeros)
-
-    tickets.append(numeros.copy())
+import time
 
 
-print(('-/' * 20))
-[print(n) for n in tickets]
+def clear_console(so=''):
+    if not so:
+        so = name
+    if so == 'nt':  # windows
+        system('cls')
+    else:  # Mac ou linux
+        system('clear')
 
 
+def gerartickets(n, printar=False, so=name):
+    lTickets = []
+    rep = 0
+    while len(lTickets) < n:
+        numeros = set()
+        while len(numeros) < 3:
+            numeros.add(randint(1, 39))
+        while len(numeros) < 6:
+            numeros.add(randint(40, 80))
+        tick = tuple(sorted(numeros))
+        if tick not in lTickets:
+            lTickets.append(tick)
+        else:
+            rep += 1
+        if printar:
+            clear_console(so)
+            print(f'Tickets {len(lTickets)} \nRepetições {rep}')
+    return tuple(lTickets)
 
 
+def sortear(qtd, tics):
+    '''Sorteia um numero 'qtd' de tickets da lista [tics] e printa na tela
+
+    :param tics: lista de tickets
+    :param qtd: quantidade de tickets a serem sorteados
+    :return:
+    '''
+    sorteio = (sample(tics, qtd))
+
+    for i, ticket in enumerate(sorteio, 1):
+        print(f'Sorteio {i}', end=': ')
+        for o, n in enumerate(ticket, 1):
+            print(n, end=' - ') if o < len(ticket) else print(n)
 
 
+clear_console()
+start = time.time()
+tickets = gerartickets(100000)
+eTime = time.time() - start
+print(f'{eTime:.1f}s')
 
+sortear(2, tickets)
+"""
 
 """
 
@@ -459,3 +491,49 @@ nlis = [val * 2 if val > 10 else val for val in lis]
 print(nlis)
 
 """
+
+
+
+import secrets
+import random
+import string
+
+secreto = secrets.SystemRandom()
+
+print(secreto.randrange(100000, 999999))
+print(f'Token 3: {secrets.token_hex(8)}')
+print(f'Token 2: {secrets.token_urlsafe(4)}')
+print(f'Token 1: {secrets.token_bytes(4)}')
+
+mis = string.punctuation
+low = string.ascii_lowercase
+upper = string.ascii_uppercase
+dig = string.digits
+
+print(f"""low: {low}
+upper: {upper}
+mis: {mis}
+dig: {dig}""")
+
+
+senha = ''.join(random.choice(low) for s in range(random.randint(2, 4)))
+senha += ''.join(random.choice(dig) for s in range(random.randint(2, 4)))
+senha += ''.join(random.choice(mis) for s in range(random.randint(2, 3)))
+
+senha = ''.join(random.choice(senha) for s in range(len(senha)))
+senha = ''.join(sorted(senha, key=lambda x: x if x not in senha else '@@'))
+
+
+print(senha)
+
+
+
+
+
+
+
+
+
+
+
+

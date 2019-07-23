@@ -534,6 +534,14 @@ https://medium.mybridge.co/34-amazing-python-open-source-libraries-for-the-past-
 
 https://www.dataquest.io/blog/free-datasets-for-projects/
 
+https://www.w3schools.com/python/python_exercises.asp
+
+
+https://www.geeksforgeeks.org/clear-screen-python/ # limpando o console
+'''https://intellij-support.jetbrains.com/hc/en-us/community/posts/360000129950-TERM-environment-variable-not-set-Mac-OS-os-system-clear-?page=1#community_comment_360000133004 '''  # setar essas configurações para os comandos a cima funcionarem
+
+https://stackoverflow.com/questions/3620943/measuring-elapsed-time-with-the-time-module
+
 Web
 
 request > urls > view > model > response
