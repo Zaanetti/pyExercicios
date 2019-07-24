@@ -454,7 +454,7 @@ lista = list(map(lambda nome: f'Sua prof é {nome}', filter(lambda nome: len(nom
 
 
 #Reduce
- 	# Não é muito recomendado o uso, mas caso queria usa-la deve ser feito um (from functools import reduce)
+ 	# Não é muito recomendado o uso, mas caso queira usa-la deve ser feito um (from functools import reduce)
  	# na maioria dos casos um loop for é mais legivel
  	# Seu funcionamento é como uma fatorial, digamos que a função passada seja somar apenas os elementos, o reduce irá fazer: a + b = res1, res1 + c = res2, res2 + d = res3, res3 + e = res4 ... resn 
  	# seu resultado é sempre um elemento só.
@@ -512,6 +512,80 @@ novosort = sorted(usuários, key= lambda usu: usu['username'])  # cria um novo i
 novosort = sorted(usuários, key= lambda usu: usu['username'], reverse=True) # cria um novo iterável organzando os elementos pelo username por ordem alfabética reversa
 novosort = sorted(usuários, key= lambda usu: len(usu['tweets'])) # cria um novo iterável organzando os elementos pelo numero de tweets do menos para o maior
 
+
+# max e min
+	# pode ser usado lambda
+	#exemplo de uso
+mus = [
+    {'titulo': 'Thunderstruck', 'tocou': 3},
+    {'titulo': 'Hurricane', 'tocou': 2},
+    {'titulo': 'Back in Black', 'tocou': 4},
+    {'titulo': 'Afterlife', 'tocou': 25}
+]
+
+print(max(mus, key=lambda m: m['tocou'])['titulo'])
+
+
+
+# reversed
+	# inverte a ordem dos elementos de qualquer iterável
+ #exemplos de uso
+texto = 'luiz'
+print(''.join(reversed(texto)))
+tupla = (2, 3, 4, 5, 5)
+for i in reversed(tupla):
+    print(i)
+
+
+# Len, Abs, Sum, Round
+	# Abs - Retorna o valor absoluto de um numero real (sem o numero negativo)
+	abs(-5)
+
+	#Round - traz o valor arredondado de um float
+	round(10.2)
+	round(1.2567859, 2) # O ', 2' é numero de casas decimais que eu desejo
+
+
+#zip
+	# cria um objeto zip
+	# após o primeiro uso é apagado automaticamente
+	# caso nos iteraveis selecionados para zipar exista diferenças de tamanho ele respeitará o tamanho do menor iterável, ignorando os demais elementos das listas maiores
+lista1 = [1, 2, 3]
+lista2 = ['a', 'b', 'c']
+zip1 = zip(lista1, lista2) 
+zip1 = list(zip1)  # retorna [(1, 'a'), (2, 'b'), (3, 'c')]
+
+dados = [(5, 'z'), (6, 'y'), (7, 'x'), (8, 'w')]
+list(zip(*dados)) # retorna [(5, 6, 7 , 8), ('z', 'y', 'x', 'w')]  -  O * é o caracter usado para descompactação de listas 
+
+ # exemplo mais complexo
+prova1 = [80, 91, 78]
+prova2 = [98, 89, 53]
+alunos = ['luiz', 'pedro', 'felipe']
+
+final = {dado[0]: max(dado[1], dado[2]) for dado in zip(alunos, prova1, prova2)}  # usando o dictionarie comprehension zipamos as 3 listas usando como chave o nome dos alinos e como valor a maior nota entre as provas
+
+final = zip(alunos, map(lambda nota: max(nota), zip(prova1, prova2)))  # de outro jeito, USANDO MAP
+final = dict(final) # convertando para dicionario
+
+
+
+
+
+TRATANDO ERROS
+"""
+SyntaxError: quando há algo que o python não reconhece como parte da linguagem
+
+NameError: Quando uma varável ou função não foi definida
+
+TypeError: Ocorre quando uma função/operação/ação é aplicada com um tipo errado
+
+
+"""
+
+
+
+
 bibliotecas
 
 math - operações matematicas mais complexas e especificas 
@@ -557,6 +631,7 @@ ramdom.shuffle(lista) # embaralhar elementos de uma lista
 secrets # modulo para gerar toquens e senhas criptografadas
 
   #função para dar clear direto no console
+  # setar/colar TERM=xterm-color indo em Run > Edit configurations > Evironment variables  e tickar o check chamado Emulate terminal in output console
 from os import system, name
 def clear_console(so=''):
     if not so:
@@ -565,3 +640,4 @@ def clear_console(so=''):
         system('cls')
     else:  # Mac ou linux
         system('clear')
+

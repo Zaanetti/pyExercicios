@@ -519,7 +519,7 @@ dig: {dig}''')
 senha = ''.join(random.choice(low) for s in range(random.randint(2, 4)))
 senha += ''.join(random.choice(dig) for s in range(random.randint(2, 4)))
 senha += ''.join(random.choice(mis) for s in range(random.randint(2, 3)))
-senha = [s for s in senha]
+senha = list(senha)
 random.shuffle(senha)
 
 senha = ''.join(senha)
@@ -527,7 +527,7 @@ print(senha)
 
 """
 
-
+'''
 from os import system
 
 
@@ -538,4 +538,15 @@ while True:
         system(com)
     else:
         break
+'''
+
+mus = [
+    {'titulo': 'Thunderstruck', 'tocou': 3},
+    {'titulo': 'Hurricane', 'tocou': 2},
+    {'titulo': 'Back in Black', 'tocou': 4},
+    {'titulo': 'Afterlife', 'tocou': 25}
+]
+
+print(max(mus, key=lambda m: m['tocou'])['titulo'])
+
 
