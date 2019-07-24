@@ -492,8 +492,8 @@ print(nlis)
 
 """
 
-
-
+"""
+# exercicio de geração de senha
 import secrets
 import random
 import string
@@ -510,30 +510,32 @@ low = string.ascii_lowercase
 upper = string.ascii_uppercase
 dig = string.digits
 
-print(f"""low: {low}
+print(f'''low: {low}
 upper: {upper}
 mis: {mis}
-dig: {dig}""")
+dig: {dig}''')
 
 
 senha = ''.join(random.choice(low) for s in range(random.randint(2, 4)))
 senha += ''.join(random.choice(dig) for s in range(random.randint(2, 4)))
 senha += ''.join(random.choice(mis) for s in range(random.randint(2, 3)))
+senha = [s for s in senha]
+random.shuffle(senha)
 
-senha = ''.join(random.choice(senha) for s in range(len(senha)))
-senha = ''.join(sorted(senha, key=lambda x: x if x not in senha else '@@'))
-
-
+senha = ''.join(senha)
 print(senha)
 
+"""
 
 
+from os import system
 
 
-
-
-
-
-
-
+teste = input()
+while True:
+    com = input('Comando: ')
+    if com != 'stop':
+        system(com)
+    else:
+        break
 

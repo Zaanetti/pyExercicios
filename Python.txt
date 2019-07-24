@@ -545,3 +545,23 @@ https://stackoverflow.com/questions/3620943/measuring-elapsed-time-with-the-time
 Web
 
 request > urls > view > model > response
+
+
+
+LEMBRETES RAPIDOS
+
+strng = ''.join(lista) # transformar lista em string
+
+ramdom.shuffle(lista) # embaralhar elementos de uma lista
+
+secrets # modulo para gerar toquens e senhas criptografadas
+
+  #função para dar clear direto no console
+from os import system, name
+def clear_console(so=''):
+    if not so:
+        so = name
+    if so == 'nt':  # windows
+        system('cls')
+    else:  # Mac ou linux
+        system('clear')
