@@ -580,11 +580,160 @@ NameError: Quando uma varável ou função não foi definida
 
 TypeError: Ocorre quando uma função/operação/ação é aplicada com um tipo errado
 
+IndexError: Ocorre quando tentamos acessar um elemnto em um iteravel com indexado utilixando um indice invalido.
 
+ValueError: Ocorre quando uma função/operação built-in recebe um argumento com tipo correto mas o valor inapropriado
+
+KeyError: Quando tentamos acessar uma chave inexistente de um dicionário
+
+AttributeError: Ocorre quando uma variável(objeto) não tem um atributo/função
+
+IndantationError: Ocorre quando não respeitamos a indentação do Python (4 espaços ou tab)
+
+
+DICA: Execptions e erros saõ sinonimos na programação.
 """
 
+#raise
+	# não é uma função, mas sim uma palavra reservada
+	# Util para que possamos passar a mensagem que desejamos no momento de um erro
+	# O raise assim como o return finaliza a função, nada após ele é executado
+
+raise ValueError('o valor ta erradaço') # exemplo1
+
+ #exemplo2
+def colore(texto, cor):
+	cores = ('azul', 'verde', 'amarelo', 'branco')
+	if type(texto) is not str:
+		raise TypeError('texto precisa ser string')
+	if type(cor) is not str:
+		raise TypeError('cor precisa ser string')
+	if cor not in cores:
+		raise ValueError(f'A cor precisa ser entre: {cores}')
+	print(f'O texto {texto} será impresso na cor {cor}')
 
 
+#Try/Except
+	# Serve para tratar de erros no programa, evitando assim que o mesmo pare e o usuário veja mensagens de erro na tela
+	# tratar o erro de forma genérica não é uma boa prática, o correto é sempre tratar de maniera especifica, vide exemplo1
+
+try:
+	//execução problematica
+except:
+	//O que deve ser feito caso de problema
+
+ #exemplo1
+try:
+	luiz()
+except NameError:
+	print('Vocês esta usando uma funçãou inexistente')
+
+ #exemplo2 apresenta os detalhes do erro
+try:
+	luiz()
+except NameError as err:
+	print(f'Os detalhes do erro que ocorreu são os seguintes: {err}')
+
+ # exemplo3  tratando de vários erros no mesmo try
+try:
+	luiz()
+except NameError as erra:
+	print(f'Os detalhes do erro que ocorreu são os seguintes: {err}')
+except TypeError as erra:
+	print(f'Os detalhes do erro que ocorreu são os seguintes: {err}')
+except:							# tratamento para um tipo de erro não esperado
+	print('erro desconhecido')
+
+ # exemplo4  tratando de erros em uma função e dando o retorno devido para cada erro
+def pega_valor(dicionario, chave)
+	try:
+		return dicionario[chave]
+	except KeyError:
+		return None
+	except TypeError:
+		return None
+
+ #exemplo5 mais complexo
+def dividir(a, b):    # toda a tratativa de erros deve ser feita dentro da função SEMPRE que possivel
+	try:
+ 		return int(a) / int(b)  # converter as variveis dentro da função
+ 	except ValueError:
+ 		return 'valor incorreto'
+ 	except ZeroDivisionError:
+ 		return 'impossivel dividir por 0'
+
+ #exemplo6 - forma Semi-generica
+def dividir(a, b):    # toda a tratativa de erros deve ser feita dentro da função SEMPRE que possivel
+	try:
+ 		return int(a) / int(b)  # converter as variveis dentro da função
+ 	except (ValueError,  ZeroDivisionError):
+ 		return 'Ocorreu um erro'
+
+
+#Try, Except, Else, Finally
+	# Dica de onde tratar erro: TODA ENTRADA DE DADOS EXTERNOS NO SISTEMA DEVE SER TRATADA
+	# Else só executado se não ocorrer o erro.
+	# O bloco Finally SEMPRE é executado, independente se houve exceção ou não
+	# O Finally geralmente é usado para fechar e desalocar recursos. Ex: Ao abrir uma conexão com um banco de dados, caso haja erro o Finally de qualquer forma fechara a conexão
+	# Você é responsavel pelas suas funções, por tanto trate as entradas
+
+ # exemplo1	
+try:
+	server.abreConexão()
+	l = server.luiz()
+except NameError:
+	print('Vocês esta usando uma funçãou inexistente')
+else:
+	print(l)
+finally:
+	server.fechaConexão()
+	print('exectando finally')
+
+ #exemplo2 mais complexo
+def dividir(a, b):    # toda a tratativa de erros deve ser feita dentro da função SEMPRE que possivel
+	try:
+ 		return int(a) / int(b)  # converter as variveis dentro da função
+ 	except ValueError:
+ 		return 'valor incorreto'
+ 	except ZeroDivisionError:
+ 		return 'impossivel dividir por 0'
+
+
+ #exemplo - forma Semi-generica
+def dividir(a, b):    # toda a tratativa de erros deve ser feita dentro da função SEMPRE que possivel
+	try:
+ 		return int(a) / int(b)  # converter as variveis dentro da função
+ 	except (ValueError,  ZeroDivisionError):
+ 		return 'Ocorreu um erro'
+
+
+# Debugando com PDB(Python Debugger)
+	# Debugger manual do python caso não esteja usando uma IDE
+	# Comandos do pdb
+	# l - kistar onde estamos no código
+	# n - proxima linha
+	# p - imprime veriável
+	# c - continua o debugging
+
+
+ #exemplo1
+import pdb
+
+nome = 'luiz'
+sobre = 'zanetti'
+pdb.set_trace()  # seta o brakepoint
+nome_completo = nome + ' ' + sobre
+curso = 'Curso de Python'
+final = nome_completo + 'faz o curso' + curso
+
+ #exemplo2
+
+nome = 'luiz'
+sobre = 'zanetti'
+import pdb; pdb.set_trace()  # seta o brakepoint
+nome_completo = nome + ' ' + sobre
+curso = 'Curso de Python'
+final = nome_completo + 'faz o curso' + curso
 
 bibliotecas
 
