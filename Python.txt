@@ -708,12 +708,21 @@ def dividir(a, b):    # toda a tratativa de erros deve ser feita dentro da funç
 
 
 # Debugando com PDB(Python Debugger)
+	# no python 3.7+ se tornou uma função built-in
 	# Debugger manual do python caso não esteja usando uma IDE
 	# Comandos do pdb
 	# l - kistar onde estamos no código
 	# n - proxima linha
 	# p - imprime veriável
 	# c - continua o debugging
+
+ #exemplo3 PARA PYTHON 3.7+
+nome = 'luiz'
+sobre = 'zanetti'
+brakepoint()  # seta o brakepoint PYTHON 3.7+
+nome_completo = nome + ' ' + sobre
+curso = 'Curso de Python'
+final = nome_completo + 'faz o curso' + curso
 
 
  #exemplo1
@@ -727,7 +736,6 @@ curso = 'Curso de Python'
 final = nome_completo + 'faz o curso' + curso
 
  #exemplo2
-
 nome = 'luiz'
 sobre = 'zanetti'
 import pdb; pdb.set_trace()  # seta o brakepoint
@@ -735,16 +743,55 @@ nome_completo = nome + ' ' + sobre
 curso = 'Curso de Python'
 final = nome_completo + 'faz o curso' + curso
 
-bibliotecas
+
+#Modulos, pacotes
+	# modulos built-in são modulos já instalados junto com o python
+	# qualquer arquivo .py pode ser usado como módulo, e o mesmo não pode ter linhas de códigos nele, apenas funções classes entre outros do genero
+	# pacotes são diretórios com outros módulos e pacotes dentro dele
+
+import modulo # importnado um modulo
+from modulo import * # importnado o  modulo todo, de uma forma onde não é necessário escrever modulo.função(), passando a escrever apenas função()
+from modulo import função #importando apenas uma função de um módulo
+import modulo as mod # importando um modulo com um apelido mod
+from modulo import função as fun # importando uma função  com um apelido fun
+from modulo import função as fun , função2 as fun2, função3 as fun3# importando funções com um apelidos
+from modulo import (			# modo bem utilizado para chamar multiplas funções de um modulo e podendo chamalas apenas por exemplo:  função2()
+	função1,
+	função2,
+	função3,
+	)
+from pacote import modulo # importando pacote
+ # modo de chamar no código pacote.modulo.funcao1()
+from pacote.modulo import funcao1 # importando a função de um modulo dentro de um pacote
+ # modo de chamar no código funcao1()
+from pacote.pacoteinterno.modulo import funcao2 # importando a função de um modulo dentro de um pacote interno de um pacote
+ # modo de chamar no código funcao2()
+
+
+#Dunder init e Dunder main
+	# o nome Dunder vem de Double Under devido as variáveis com 2 underlines(ex: __init__ ,  __main__)
+	# TODO ARQUIVO .py POSSUI AS VARIAVEIS INTERNAS   __init__ E __name__
+	# AO EXECUTAR UM ARQUIVO .py O PYTHON ATRIBUIRÁ À VARIAVEL __name__ O VALOR __main__ INDICANDO QUE ESTE É O MÓDULO DE EXECUÇÃO PRINCIPAL
+	# ISSO EXPLICA AS CHAMADAS QUE VEMOS DO TIPO ABAIXO
+		if __name__ == '__main__':
+			# código de execução
+	# quando um arquivo .py é importado o __name__ dele é o próprio nome do arquivo
 
 math - operações matematicas mais complexas e especificas 
 statistics - para trabalhar com dados estatisticos
 functools - 
 sys - getsizeof(variável) # função que diz o espaço em memória ocupado pela variável especificada
+secrets - gera numeros e tokens pseudo-aleatórios criptografados
+random -  gera numeros pseudo-aleatórios e auxilia no uso e teste de iteráveis 
+colorama  - modulo para poder imprimir de forma colorida no terminal
+pypdf - auxilia na criação de pdf
+
 
 
 Site interessante:
 
+pypi.org # site para achar, publicar e instalar modulos de python
+ 
 https://pygobject.readthedocs.io/en/latest/getting_started.html#fedora-getting-started
 
 
@@ -775,7 +822,9 @@ LEMBRETES RAPIDOS
 
 strng = ''.join(lista) # transformar lista em string
 
-ramdom.shuffle(lista) # embaralhar elementos de uma lista
+random.shuffle(lista) # embaralhar elementos de uma lista
+
+random.uniform(1, 10) # gera valores reais(float) entre os valores estabelecidos 
 
 secrets # modulo para gerar toquens e senhas criptografadas
 
