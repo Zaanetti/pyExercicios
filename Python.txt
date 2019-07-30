@@ -767,6 +767,15 @@ from pacote.modulo import funcao1 # importando a função de um modulo dentro de
 from pacote.pacoteinterno.modulo import funcao2 # importando a função de um modulo dentro de um pacote interno de um pacote
  # modo de chamar no código funcao2()
 
+math - operações matematicas mais complexas e especificas 
+statistics - para trabalhar com dados estatisticos
+functools - 
+sys - getsizeof(variável) # função que diz o espaço em memória ocupado pela variável especificada
+secrets - gera numeros e tokens pseudo-aleatórios criptografados
+random -  gera numeros pseudo-aleatórios e auxilia no uso e teste de iteráveis 
+colorama  - modulo para poder imprimir de forma colorida no terminal
+pypdf - auxilia na criação de pdf
+
 
 #Dunder init e Dunder main
 	# o nome Dunder vem de Double Under devido as variáveis com 2 underlines(ex: __init__ ,  __main__)
@@ -777,14 +786,60 @@ from pacote.pacoteinterno.modulo import funcao2 # importando a função de um mo
 			# código de execução
 	# quando um arquivo .py é importado o __name__ dele é o próprio nome do arquivo
 
-math - operações matematicas mais complexas e especificas 
-statistics - para trabalhar com dados estatisticos
-functools - 
-sys - getsizeof(variável) # função que diz o espaço em memória ocupado pela variável especificada
-secrets - gera numeros e tokens pseudo-aleatórios criptografados
-random -  gera numeros pseudo-aleatórios e auxilia no uso e teste de iteráveis 
-colorama  - modulo para poder imprimir de forma colorida no terminal
-pypdf - auxilia na criação de pdf
+
+Leitura de arquivos
+
+# função open() - abrindo um arquivo 'r'
+	# ao abrir um arquivo com a função open() é criada uma conexão entre o seu programa e o arquivo no disco chamada de streaming
+	#ao finalizar os trabalhos com o arquivos usamos a função close()
+arquivo = open(texto.txt) #abre o arquivo e gera um objeto _io.TextIOWrapper
+
+arquivo.read() # gera uma string com o contaudo do arquivo aberto, podemos limitar o numero caracteres a serem lidos basta especificar nos parenteses
+arquivo.seek(0) # é utilizada para movimentar o cursor pelo arquivo onde 0 é a posição especificada para o cursor
+arquivo.readline() # retorna uma string com a linha lida
+arquivo.readlines() # retorna uma lista onde cada elemento é uma linha do arquivo
+
+arquivo.close() # fechado a conexão(streaming) 
+arquivo.closed() # verifica se o arquivo esta aberto ou fechado
+
+
+# bloco with - MANEIRA CORRETA DE EDITAR ARQUIVOS
+	# utilizado para criar um contexto de trabalho onde os recusrsos são fechados após o bloco with
+
+with open('texto.txt') as arquivo: # assim que o código sai da identação do with o arquivo é fechado 
+	print(arquivo.readlines())
+
+
+# escrevendo em um arquivo 'w'
+	# abrindo no modo 'w' caso ele não exista ele será criado
+	# caso o arquivo ja exista ele será apagado e criado um novo com o novo conteudo
+
+with open('texto.txt', 'w') as arquivo: # o 'w' indica que estamos abrindo o arquivo no modo de escrita
+	arquivo.write('Muito fácil editar arquivos\n')
+	arquivo.write('Luiz Henrique Zanetti')
+
+
+# modos de abertura de arquivo
+	'r' - Leitura
+	'w' - escrita
+	'x' - só abre para escrita caso não exista
+	'a' - abre para escrita adicionando o conteudo ao final do arquivo, caso não exista será criado, com este modo não controlamos o cursor
+	'+' - deve ser usado com uma das opções acima mas o '+' lhe da o controle do cursor e permite a escritura no arquivo, exemplo 'r+'
+	#existem outros modos
+
+
+#StringIO
+	# Tanto na escritura quanto na leitura de arquivos é necessário ter a permissão do SO da maquina que esta executando o programa
+	# Utilizado para ler e escrver em memória
+
+from io import StringIO
+
+mensagem - 'mensagem teste'
+
+arquivo = StringIO(mensagem)  # foi criado uma variável onde ela atua como um arquivo de leitura/escrita
+print(arquivo.read())
+arquivo.write('teste') # desta forma podemos ler e até escrever no mesmo arquivo sem ter que ficar mudando o modo
+
 
 
 
