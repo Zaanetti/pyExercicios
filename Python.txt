@@ -841,6 +841,32 @@ print(arquivo.read())
 arquivo.write('teste') # desta forma podemos ler e até escrever no mesmo arquivo sem ter que ficar mudando o modo
 
 
+# Navegando e obtendo informações de arquivos
+import os 
+os.getcwd() # traz o diretório de trabalho corrente
+os.chdir('..')  # muda de pasta 
+os.path.isabs('/home/geek/')  # verifica se é um path absoluto - OSX
+os.path.isabs('C:\\Users\\luiz\\documento') # verifica se é um path absoluto - WINDOWS
+os.name() #windows ele trará 'nt' para os demais trará o nome do linux ou mac
+os.platform() # traz se é 32 ou 64 bits
+os.path.join(os.getcwd(), 'novapasta') # cria uma nova pasta no caminho especificado(neste caso sera a pasta de trabalho corrente devido ao os.getcwd()).
+os.path.join(os.getcwd(), 'novapasta', 'novasubpasta') # cria uma pasta e uma sub-pasta no caminho especificado(neste caso sera a pasta de trabalho corrente devido ao os.getcwd()).
+os.listdir() # retorna uma lista com o nome do todas as pastas dento do caminho especificado
+os.scandir() # retorna um iterável do tipo osx.ScandirIterator com o nome do todas as pastas dento do caminho especificado
+
+ #funções do iterável gerado pelo os.scandir
+ arquivo = os.scandir() # criando uma variável com o scandir
+ arquivo[0].inode() # numeração do arquivo na ierarquia de diretórios
+ arquivo[0].is_dir() # verificar se é um diretório
+ arquivo[0].is_file() # vareificar se é um arquivo
+ arquivo[0].is_symlink() # verificar se é um link simbólico
+ arquivo[0].name # traz o nome do arquivo
+ arquivo[0].path # caminho até o arquivo
+ arquivo[0].stat()  # informa varios status sobre o arquivo (tamanho, etc)
+ arquivo.close() # sempre que usamos a função scandir devemos fecha-la
+
+#Manipulando Arquivos
+impos
 
 
 Site interessante:
@@ -896,15 +922,6 @@ def clear_console(so=''):
 
 
 
-import os 
-os.getcwd() # traz o diretório de trabalho corrente
-os.chdir('..')  # muda de pasta 
-os.path.isabs('/home/geek/')  # verifica se é um path absoluto - OSX
-os.path.isabs('C:\\Users\\luiz\\documento') # verifica se é um path absoluto - WINDOWS
-os.name() #windows ele trará 'nt' para os demais trará o nome do linux ou mac
-os.platform() # traz se é 32 ou 64 bits
-os.path.join(os.getcwd(), 'novapasta') # cria uma nova pasta no caminho especificado(neste caso sera a pasta de trabalho corrente devido ao os.getcwd()).
-os.path.join(os.getcwd(), 'novapasta', 'novasubpasta') # cria uma pasta e uma sub-pasta no caminho especificado(neste caso sera a pasta de trabalho corrente devido ao os.getcwd()).
-os.listdir() # retorna uma lista com o nome do todas as pastas dento do caminho especificado
-os.scandir() # retorna um iterável do tipo osx.ScandirIterator com o nome do todas as pastas dento do caminho especificado
+
+
 
