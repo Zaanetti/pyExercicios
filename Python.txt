@@ -866,7 +866,11 @@ os.scandir() # retorna um iterável do tipo osx.ScandirIterator com o nome do to
  arquivo.close() # sempre que usamos a função scandir devemos fecha-la
 
 #Manipulando Arquivos
-impos
+import os
+
+os.path.exists('path') # retorna se o arquivo existe
+os.mknod('path') # cria um arquivo # apresenta erro se ja existir o arquivo
+os.mkdir('path') # cria um diratório Obs: se não tiver permissão para criar ele não cria
 
 
 Site interessante:
