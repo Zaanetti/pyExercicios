@@ -871,6 +871,51 @@ import os
 os.path.exists('path') # retorna se o arquivo existe
 os.mknod('path') # cria um arquivo # apresenta erro se ja existir o arquivo
 os.mkdir('path') # cria um diratório Obs: se não tiver permissão para criar ele não cria
+os.mkdirs('path', exist_ok=True) # cria vários diretórios e o exist_ok=True faz com que não haja erro caso um dos diretórios ja exista
+os.rename('path do arquivo/diretorio', 'path do arquivo/diretório com o novo nome') #caso não ache o arquivo da erro de File not found
+os.remove('texto.txt') # deleta arquivos, NÃO JOGA NA LIXEIRA,DELETA DIRETO, caso esteja em uso dará erro
+os.rmdir('path') #deleta um diretório, se houver arquivos dentro da pasta ele dará OS error
+os.removedirs('path') # deleta varias pastas 
+import send2trash # modulo que deleta os arquivos mas envia para a lixeira
+send2trash('path')
+import tempfile  # cria arquivos temporários
+	#exemplo de uso do tempfile - NÃO funciona no WINDOWS
+	with tempfile.TemporaryDirectory() as tmp:  #cria o diretório temposrário
+		print(f'Criei o diretório temporário em {tmp}')  # mostra onde foi criado este diretório
+		with open(os.path.join(tmp, 'arquivo_temporario.txt'), 'w') as arquivo:	# cria dentro do diretório tempoário um arquivo temporário 
+			arquivo.write('Geek University\n') # escreve no arquivo
+		input() # input criado apenas para verificar a criação do diretório e do arquivo, após o input tudo que estava dentro do diretório temporário inclusive o diretório temporário são excluidos
+
+	#exemplo de criação de arquivos temporários	
+	with tempfile.TemporaryFile() as tmp:
+		tmp.write(b'Geek University\n') # em arquivos temporários a unica forma de escrever nos mesmos é através de bits, portanto o b no começo da string informa que o que foi escrito esta sendo convertido para bináriopara depois se tornar uma escrina no arquivo
+		tmp.seek(0)
+		print(tmp.read())
+
+
+# Iterator e Iterable
+	#Iterator
+		# um obj que po ser iterado
+		# um ibj que retorna um dado, sendo um elemento por vez quando uma função next() é chamada
+
+	#Iterable
+		# Um obj que irá retornar um iterator quando a função iter() for chamada
+
+
+	# para criar um iterável crie um objeto e declare as opções __iter__ e __next__
+
+
+
+
+
+it1 = iter(nome)	
+it2 = iter(lista)
+
+print(next(nome))
+print(next(lista))
+
+
+
 
 
 Site interessante:
