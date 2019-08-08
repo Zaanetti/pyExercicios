@@ -969,6 +969,14 @@ def clear_console(so=''):
     else:  # Mac ou linux
         system('clear')
 
+# maneiras de obter o output do console
+from subprocess import Popen, PIPE
+
+pipe = Popen("lsusb", shell=True, stdout=PIPE).stdout
+output = pipe.read()
+
+cmd = ['lsusb']
+output = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0]
 
 
 
