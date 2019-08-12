@@ -920,6 +920,8 @@ print(next(lista))
 
 Site interessante:
 
+https://www.cyberciti.biz/faq/install-snapd-on-fedora-linux-system-dnf-command/
+
 pypi.org # site para achar, publicar e instalar modulos de python
  
 https://pygobject.readthedocs.io/en/latest/getting_started.html#fedora-getting-started
