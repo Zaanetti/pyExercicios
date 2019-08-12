@@ -35,9 +35,11 @@ def devd(device):
         return None
 
 
-os.system("exec su -l $luiz")
-os.system("gnome-terminal")
+# os.system("exec su -l $luiz")
+# os.system("gnome-terminal")
 
+# os.mkdir('/etc/udev/rules.d/teste')
+#
 instalações()
 lusb1 = con_output('lsusb')
 
@@ -57,9 +59,11 @@ if type(det) == dict:
     # cmd = f"sudo ls -l /dev/bus/usb/{det['bus']}/{det['device']}"
     # per = con_output(cmd, tipo='str') deu merda ainda não descobri o pq
     # if 'crw-rw-r--' in per:
+    rules = f'SUBSYSTEM=="usb", ATTR{{idVendor}}=="{det["idfab"]}", ATTR{{idProduct}}=="{det["iddev"]}", GROUP="androiddev", MODE="0664"'
     os.system('sudo groupadd androiddev')
-    os.system(f'sudo usermod - aG androiddev {getpass.getuser()}')
-
+    os.system(f'sudo usermod -aG androiddev {getpass.getuser()}')
+    os.mkdirs('/etc/udev/rules.d/teste', exist_ok=True)
+    os.mk
 
 
 # input('FIM')

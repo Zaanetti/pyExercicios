@@ -538,7 +538,7 @@ while True:
         system(com)
     else:
         break
-'''
+
 
 mus = [
     {'titulo': 'Thunderstruck', 'tocou': 3},
@@ -548,5 +548,10 @@ mus = [
 ]
 
 print(max(mus, key=lambda m: m['tocou'])['titulo'])
+'''
 
+
+import os
+
+os.mkdir('tesstee')
 
