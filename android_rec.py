@@ -128,6 +128,10 @@ else:
         etapa = '1'
         arq.write(etapa)
 
+cmd = input('cmd: ').strip()
+if cmd == '1' or cmd == '2':
+    etapa = cmd
+
 
 if etapa == '1':
     instalações()
@@ -183,8 +187,8 @@ else:
     os.system('sudo udevadm control --reload')
     os.system('sudo systemctl restart systemd-udevd.service')
 
-
-    print('Desconecte e conecte o dispositivo android\n')
+    os.system('sudo adb devices')
+    input('Desconecte e conecte o dispositivo android\n')
 
     print('Neste momento o dispositivo android deve mostrar na tela uma mensagem para você verificar a RSA Key do PC.'
           ' Para confirmar esta Key, verifique o retorno abaixo\n')
