@@ -4,7 +4,7 @@ import pyperclip as clipb
 def verQuery(query):
     if type(query) == str:
         q = query.strip().upper()
-        if 'SELECT ' == q[:6]:
+        if 'SELECT' == q[:6]:
             if ' FROM ' in q:
                 q = q[:q.find('FROM')] + '\n' + q[q.find('FROM'):]
             else:
@@ -31,10 +31,36 @@ def verQuery(query):
             q = q[:q.find('WHERE')] + '\n' + q[q.find('WHERE'):]
             while ' AND' in q:
                 q = q[:q.find(' AND')] + '\nAND ' + q[q.find(' AND') + 5:]
+            clipb.copy(q.strip())
 
 
+def repQuery(query):
+    if type(query) == str:
+        q = query.strip().upper()
+        q = q.replace(' FROM', '\nFROM')
+        q = q.replace(' SET', '\nSET')
+        q = q.replace(' JOIN', '\nJOIN')
+        q = q.replace(' INNER JOIN', '\nINNER JOIN')
+        q = q.replace(' LEFT JOIN', '\nLEFT JOIN')
+        q = q.replace(' WHERE', '\nWHERE')
+        q = q.replace(' AND', '\nAND')
+        q = q.replace(' GROUP BY', '\nGROUP BY')
+        q = q.replace(' ORDER BY', '\nORDER BY')
 
-clip = clipb.paste()
+        clipb.copy(q)
 
-if verQuery(clip):
-    comando = clipb.paste()
+
+def repQuery2(query):
+    if type(query) == str:
+        q = query.strip().upper()
+        sql = ('SELECT', 'UPDATE', 'INSERT INTO', 'DELETE', 'FROM', 'SET', 'JOIN', 'INNER JOIN', 'LEFT JOIN', 'WHERE', 'AND', 'OR', 'GROUP BY', 'ORDER BY', 'SUM')
+        for sql in sql:
+            q = q.replace(f' {sql}', f'\n{sql}')
+        clipb.copy(q)
+
+
+# verQuery(clipb.paste())
+# repQuery(clipb.paste())
+repQuery2(clipb.paste())
+
+

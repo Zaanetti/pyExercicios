@@ -1,0 +1,164 @@
+anotações
+
+
+
+Produção e consumo sempre deve ser iguais, balanceados
+
+
+hidroelétrcas atendem o consumo geral e as demais usinas atendem picos
+
+
+CNPE - Conselho Nscional de Política Energética
+
+
+Agentes
+	Categoria de Geração
+
+	Categoria de  Distribuição 
+
+	Categoria  de comercialização
+
+
+CCEE
+	Agente de transmissão
+
+	Gareante o estimulo a competitividade de preços e a modicidade tarifária
+
+	Contabilização e Liquidação financeira  do mercado de curto prazo (MCP)
+
+
+
+
+Consumidor Livre e especial - NÃO Residenciais
+
+
+
+ACR - 75% do mercado - Dist, geradores e consumidores cativos
+	Cativos:
+	  Cointatração simplificada
+	  Pagamentos a partir de faturas mensais
+	  É pago a distribuidora, onde não há preço contratural apenas uma tarifa regulada
+	  	Tarifa regulada:
+	  		Fornecimento: TE + TUSD(Tarifa de Uso do Sistema de Distribuição)
+	  		Tributos
+	  		Demais custos: encargos e custeio da iluminação publica
+
+
+
+
+ACL - Comercializadoras, geradores, (consumidores livres e especiais - 60% da CCEE)
+	Pagamentos feitos a partir de contratos
+	Custos do ACL:
+		Fornecimento: Contrato + TUSD, mas alguns da ACL podem estar conectado a Transmissora(Neste caso eles pagam a TUST?)
+		Contratos livremente negociados: Preço, per de entrega, cond pagamento, garantia de pagamento
+		Tributação: Secretariua da fazenda de acordo com o UF
+
+	Aspecto Financeiro:
+		Mercado de Curto Prazo(MCP): Diferenças pagas através da PLD (Liquidação)
+		Encargos: Ressarcimento de ag. Geradores dos custos incorridos na manutenção da confiabilidade, estabilidade e segurança do sistema
+		Penalidades: Deve esta 100% contratado
+		Contribuição Associativa: Contribuição mensal dos agentes, conforme o numero de votos na CCEE
+
+
+Consumidor Livre- Podem escolhor livremente de quem compra energia
+	Demanda minima = 3 MW
+	Ex: Caso o consumidor tenha uma carga de 5MW e desja contratar apenas 2,5 MW no ACL ele se torna CONSUMIDOR PARCIALMENTE LIVRE 
+	
+
+
+Consumidor especial - Possui carga menos, mas atendendo a requisitos podem escolher de quem comprar desde que a fonte de geração seja Especial(biomassa, solar, éolica e PCH)
+	Demanda minima = 0,5MW e participande do Grupo A - ( Tensão => 2,3 kV ou atendimento subterraneo sendo < a 2,3kV)
+	União de cargas:(Quando duas ou mais plantas se unem para chegar ao minimo de 0,5 MW de carga)
+		Comunhão de Fato: CNPJs diferentes e fisicamente lado a lado 
+		Comunhão ce Direito: Mesmo CNPJ, mesmo submercado e Distribuidoras diferentes
+
+
+Formas de atuação na CCEE:
+	Varejista:
+		Pode ter consumidores representados por ele tendo total responsabilidade pelos mesmo. (Adesão, contabilização, penalidades e liquidação financeira)
+
+
+	Livre ou Especial: 
+		Compra energida de quem quiser
+
+	Parcialmente livre:
+		Parte de sua carga vem da distribuidora(ACR) e a outra parte vem da ACL(contratado)
+
+	Representação:
+		O consumidor pode ser representado por uma comercializadora ou consultoria, mas é considerado um agente como qualquer outro(Livre, parc-Liver ou Especial) perante a CCEE
+
+
+
+
+
+
+Adesão para CL e CE
+
+	Carta Denuncia: Aviso do Cativo para a Distribuidora sobre a migração de ACR para ACL
+
+	Pagamento do Boleto de Emulamento
+
+	Habilitação Comercial:
+		Info Financeiras - (Conta bancária aberta no banco custodiante(Bradesco - Trianon - USP) ou grupo de liquidação)
+		Contatos e Atribuições - Cadastras os acessos  de integrantes (Representante legal, Contatos do canditato a Agente, Empresa Representante)
+			Representante Operacional Total - responsável por tudo apenas não pelo financeiro
+			Representante Operacional Parcial - o Agente que escolhe o que será atribuido ao Representante
+			Representante Contábeil - Resposável por TUDO
+		Perfil do Agente
+			Para cadstrar outras plantas 
+		Envio e assinatura de Documentos
+
+	Habilitação Técnica:
+		
+		Adequação do SMF e cadastramento do Ponto de Medição
+			Agente de medição (Distribuidora ou transmissor)
+			Agente Conectado  (Distribuidora ou transmissor)
+			Agente conectante (Consumidor)
+
+			Sistema de Medição para Faturamento(SMF):
+				Medidores
+				Link de comunicação 
+				Transformadores para Instrumentos
+				Etc.
+
+		SCDE(Sistema de coleta de dados de energia) - Sistema onde são especificados os dados para a implantação do SMF
+			Parecer de localização:
+				Medidores
+				Codificação para parametrizar os medidores
+				Nível de tensão dos pontos de conexão
+				Equipamentos Conexões
+				Comunicação dos medidores feito através de VPN
+
+
+		Modelagem de Ativos (Plantas = Ativos)
+			Começa paralelamente ao SMF só termina após o SMF estar finalizado e implantado
+			Solicitação de Modelagem de Ativo(SMA):
+				Em preenchimento
+				Em aceite 	
+				Em Validação
+				Em aprovação Aguardando Pendências
+				Aprovada
+				Em Modelagem
+
+		Declaração do histórico de consumo(DHC)
+			Declaração de montantes mensais de consumo de energia no período de ambiente cativo.
+
+	Prazos:
+		M - 17 du: Envio SMA e DHC para validação da Distribuidora
+		M - 12 du:  Processo entregue todo sem pendencias
+		M - 8 du: Reunião CAd
+		M: Agente CCEE
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
